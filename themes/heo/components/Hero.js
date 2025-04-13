@@ -1,6 +1,6 @@
 import { useRef, useState, useImperativeHandle } from 'react'
-import Link from 'next/link' // Add this line
-import { ArrowSmallRight } from '@/components/HeroIcons'
+import Link from 'next/link'
+import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons' // Update this line
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
