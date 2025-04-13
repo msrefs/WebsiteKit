@@ -1,8 +1,4 @@
-import { 
-  useRef, 
-  useState, 
-  useImperativeHandle  // 必须添加这个
-} from 'react'
+import { useRef, useState, useImperativeHandle } from 'react'
 import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
@@ -15,18 +11,18 @@ const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
     <div id='hero-wrapper' className='w-full select-none mb-4'>
-      {/* PC端 - 保留原有样式但限制宽度 */}
+      {/* PC端 - 调整宽度与下方对齐 */}
       <div 
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           rounded-xl max-w-6xl w-full mx-auto hidden md:flex flex-row flex-nowrap px-4`}>
+           rounded-xl w-full max-w-[86rem] mx-auto hidden md:flex flex-row flex-nowrap px-0`}>
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
-      {/* 移动端 - 添加边距、圆角和调整高度 */}
+      {/* 移动端 - 移除点击事件，调整高度 */}
       <div className='md:hidden w-full px-4'>
         <MobileBanner {...props} />
       </div>
@@ -34,22 +30,13 @@ const Hero = props => {
   )
 }
 
-// 移动端专用Banner (高度调整为视口的2/3)
+// 移动端专用Banner (移除点击跳转)
 function MobileBanner(props) {
-  const router = useRouter()
-  const { allNavPages } = props
   const { isDarkMode } = useGlobal()
-
-  function handleClickBanner() {
-    const randomIndex = Math.floor(Math.random() * allNavPages.length)
-    router.push(`${siteConfig('SUB_PATH', '')}/${allNavPages[randomIndex]?.slug}`)
-  }
-
+  
   return (
-    <div
-      onClick={handleClickBanner}
-      className={`w-full h-[50vh] max-h-[400px] rounded-xl overflow-hidden relative
-        ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}>
+    <div className={`w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative
+      ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}>
       
       {/* 标题文字容器 */}
       <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
