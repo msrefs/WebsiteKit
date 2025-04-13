@@ -1,9 +1,8 @@
 import { useRef, useState, useImperativeHandle } from 'react'
-import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
+import { ArrowSmallRight } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import CONFIG from '../config'
 
@@ -11,18 +10,18 @@ const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
     <div id='hero-wrapper' className='w-full select-none mb-4'>
-      {/* PC端 - 确保使用原有类名 */}
+      {/* PC端 - 完全原始样式（宽度与下方对齐） */}
       <div 
-        id='hero'
+        id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           recent-post-top rounded-[12px] w-full max-w-[86rem] mx-auto hidden md:flex flex-row flex-nowrap`}>
+           recent-post-top rounded-[12px] max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
-      {/* 移动端 - 确保选择器优先级 */}
+      {/* 移动端 - 仅保留Banner（无点击跳转） */}
       <div className='md:hidden w-full px-4'>
         <div className="w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative bg-white dark:bg-[#1e1e1e]">
           <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
@@ -33,13 +32,16 @@ const Hero = props => {
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </div>
           </div>
+          <div className='absolute inset-0 opacity-20'>
+            <TagsGroupBar />
+          </div>
         </div>
       </div>
     </div>
   )
 }
 
-// 原BannerGroup组件（仅PC端使用）
+// 仅保留PC端需要的子组件
 function BannerGroup(props) {
   return (
     <div className='flex flex-col justify-between flex-1 mr-2 max-w-[42rem]'>
