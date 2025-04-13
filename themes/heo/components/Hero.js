@@ -16,7 +16,7 @@ const Hero = props => {
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-          recent-post-top rounded-[12px] w-full px-15 hidden md:flex flex-row flex-nowrap`}>  {/* 添加 px-5 */}
+          recent-post-top rounded-[12px] w-full px-5 hidden md:flex flex-row flex-nowrap`}>  {/* 添加 px-5 */}
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
