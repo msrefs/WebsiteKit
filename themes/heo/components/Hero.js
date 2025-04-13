@@ -1,57 +1,72 @@
-// import Image from 'next/image'
-import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
+import { ArrowSmallRight } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
-import { useGlobal } from '@/lib/global'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useImperativeHandle, useRef, useState } from 'react'
+import { useRef } from 'react'
 import CONFIG from '../config'
 
-/**
- * 顶部英雄区
- * 左右布局，
- * 左侧：banner组
- * 右侧：今日卡牌遮罩
- * @returns
- */
 const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
-    <div
-      id='hero-wrapper'
-      className='recent-top-post-group w-full overflow-hidden select-none px-5 mb-4'>
-      <div
-        id='hero'
+    <div id='hero-wrapper' className='w-full select-none px-0 mb-4 overflow-hidden'>
+      {/* PC端完整显示 */}
+      <div 
+        id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           recent-post-top rounded-[12px] 2xl:px-5 recent-top-post-group max-w-[86rem] overflow-x-scroll w-full mx-auto flex-row flex-nowrap flex relative`}>
-        {/* 左侧banner组 */}
+           rounded-[12px] max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
         <BannerGroup {...props} />
-
-        {/* 中间留白 */}
         <div className='px-1.5 h-full'></div>
-
-        {/* 右侧置顶文章组 */}
         <TopGroup {...props} />
+      </div>
+
+      {/* 移动端简化版 - 仅显示Banner且占满全宽 */}
+      <div className='md:hidden w-full px-0'>
+        <MobileBanner {...props} />
       </div>
     </div>
   )
 }
 
-/**
- * 英雄区左侧banner组
- * @returns
- */
+// 移动端专用Banner组件
+function MobileBanner(props) {
+  const router = useRouter()
+  const { allNavPages } = props
+
+  function handleClickBanner() {
+    const randomIndex = Math.floor(Math.random() * allNavPages.length)
+    const randomPost = allNavPages[randomIndex]
+    router.push(`${siteConfig('SUB_PATH', '')}/${randomPost?.slug}`)
+  }
+
+  return (
+    <div
+      onClick={handleClickBanner}
+      className='w-full h-64 bg-white dark:bg-[#1e1e1e] relative overflow-hidden'>
+      {/* 标题文字 */}
+      <div className='z-10 flex flex-col absolute top-8 left-8'>
+        <div className='text-3xl font-bold mb-2 dark:text-white'>
+          {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+        </div>
+        <div className='text-sm text-gray-600 dark:text-gray-200'>
+          {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+        </div>
+      </div>
+
+      {/* 背景装饰元素 */}
+      <div className='absolute inset-0 opacity-20'>
+        <TagsGroupBar />
+      </div>
+    </div>
+  )
+}
+
+// 原BannerGroup组件（仅PC端使用）
 function BannerGroup(props) {
   return (
-    // 左侧英雄区
-    <div
-      id='bannerGroup'
-      className='flex flex-col justify-between flex-1 mr-2 max-w-[42rem]'>
-      {/* 动图 */}
+    <div className='flex flex-col justify-between flex-1 mr-2 max-w-[42rem]'>
       <Banner {...props} />
-      {/* 导航分类 */}
       <GroupMenu />
     </div>
   )
