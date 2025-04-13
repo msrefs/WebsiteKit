@@ -1,9 +1,10 @@
-import { ArrowSmallRight } from '@/components/HeroIcons'
+import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
+import { useGlobal } from '@/lib/global' // 确保这行存在
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useRef } from 'react'
+import { useImperativeHandle, useRef, useState } from 'react'
 import CONFIG from '../config'
 
 const Hero = props => {
