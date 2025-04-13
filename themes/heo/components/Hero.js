@@ -11,43 +11,29 @@ const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
     <div id='hero-wrapper' className='w-full select-none mb-4'>
-      {/* PC端 - 恢复原有宽度 */}
+      {/* PC端 - 确保使用原有类名 */}
       <div 
-        id='hero-pc'
+        id='hero'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           recent-post-top rounded-[12px] 2xl:px-5 max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
+           recent-post-top rounded-[12px] w-full max-w-[86rem] mx-auto hidden md:flex flex-row flex-nowrap`}>
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
-      {/* 移动端 - 保持优化后的样式 */}
+      {/* 移动端 - 确保选择器优先级 */}
       <div className='md:hidden w-full px-4'>
-        <MobileBanner {...props} />
-      </div>
-    </div>
-  )
-}
-
-// 移动端Banner (无点击跳转 + 适度高度)
-function MobileBanner(props) {
-  const { isDarkMode } = useGlobal()
-  
-  return (
-    <div className={`w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative
-      ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}>
-      
-      <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
-        <div className='text-2xl font-bold mb-1 dark:text-white'>
-          {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+        <div className="w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative bg-white dark:bg-[#1e1e1e]">
+          <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
+            <div className='text-2xl font-bold mb-1 dark:text-white'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+            </div>
+            <div className='text-sm text-gray-600 dark:text-gray-300'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </div>
+          </div>
         </div>
-        <div className='text-sm text-gray-600 dark:text-gray-300'>
-          {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-        </div>
-      </div>
-      <div className='absolute inset-0 opacity-20'>
-        <TagsGroupBar />
       </div>
     </div>
   )
