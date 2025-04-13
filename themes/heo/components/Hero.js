@@ -1,4 +1,5 @@
-import { ArrowSmallRight } from '@/components/HeroIcons'
+import { useRef, useState } from 'react' // 必须添加
+import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
