@@ -11,12 +11,12 @@ const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
     <div id='hero-wrapper' className='w-full select-none mb-4'>
-      {/* PC端 - 完全原始样式（宽度与下方对齐） */}
+      {/* PC端 - 添加 max-w-screen-xl 和 mx-auto 实现居中 */}
       <div 
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           recent-post-top rounded-[12px] max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
+           recent-post-top rounded-[12px] max-w-screen-xl w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
