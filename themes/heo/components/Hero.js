@@ -1,4 +1,5 @@
 import { useRef, useState, useImperativeHandle } from 'react'
+import Link from 'next/link' // Add this line
 import { ArrowSmallRight } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
