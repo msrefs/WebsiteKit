@@ -1,61 +1,62 @@
-import { ArrowSmallRight, PlusSmall } from '@/components/HeroIcons'
+import { ArrowSmallRight } from '@/components/HeroIcons'
 import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
-import { useGlobal } from '@/lib/global' // 确保这行存在
+import { useGlobal } from '@/lib/global'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useImperativeHandle, useRef, useState } from 'react'
 import CONFIG from '../config'
 
 const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
-    <div id='hero-wrapper' className='w-full select-none px-0 mb-4 overflow-hidden'>
-      {/* PC端完整显示 */}
+    <div id='hero-wrapper' className='w-full select-none mb-4'>
+      {/* PC端 - 保留原有样式但限制宽度 */}
       <div 
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           rounded-[12px] max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
+           rounded-xl max-w-6xl w-full mx-auto hidden md:flex flex-row flex-nowrap px-4`}>
         <BannerGroup {...props} />
-        <div className='px-1.5 h-full'></div>
+        <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
-      {/* 移动端简化版 - 仅显示Banner且占满全宽 */}
-      <div className='md:hidden w-full px-0'>
+      {/* 移动端 - 添加边距、圆角和调整高度 */}
+      <div className='md:hidden w-full px-4'>
         <MobileBanner {...props} />
       </div>
     </div>
   )
 }
 
-// 移动端专用Banner组件
+// 移动端专用Banner (高度调整为视口的2/3)
 function MobileBanner(props) {
   const router = useRouter()
   const { allNavPages } = props
+  const { isDarkMode } = useGlobal()
 
   function handleClickBanner() {
     const randomIndex = Math.floor(Math.random() * allNavPages.length)
-    const randomPost = allNavPages[randomIndex]
-    router.push(`${siteConfig('SUB_PATH', '')}/${randomPost?.slug}`)
+    router.push(`${siteConfig('SUB_PATH', '')}/${allNavPages[randomIndex]?.slug}`)
   }
 
   return (
     <div
       onClick={handleClickBanner}
-      className='w-full h-64 bg-white dark:bg-[#1e1e1e] relative overflow-hidden'>
-      {/* 标题文字 */}
-      <div className='z-10 flex flex-col absolute top-8 left-8'>
-        <div className='text-3xl font-bold mb-2 dark:text-white'>
+      className={`w-full h-[50vh] max-h-[400px] rounded-xl overflow-hidden relative
+        ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}>
+      
+      {/* 标题文字容器 */}
+      <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
+        <div className='text-2xl md:text-3xl font-bold mb-1 dark:text-white'>
           {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
         </div>
-        <div className='text-sm text-gray-600 dark:text-gray-200'>
+        <div className='text-sm text-gray-600 dark:text-gray-300'>
           {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
         </div>
       </div>
 
-      {/* 背景装饰元素 */}
+      {/* 背景装饰元素（降低透明度） */}
       <div className='absolute inset-0 opacity-20'>
         <TagsGroupBar />
       </div>
