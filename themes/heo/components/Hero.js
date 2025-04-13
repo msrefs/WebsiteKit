@@ -11,18 +11,18 @@ const Hero = props => {
   const HEO_HERO_REVERSE = siteConfig('HEO_HERO_REVERSE', false, CONFIG)
   return (
     <div id='hero-wrapper' className='w-full select-none mb-4'>
-      {/* PC端 - 调整宽度与下方对齐 */}
+      {/* PC端 - 恢复原有宽度 */}
       <div 
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           rounded-xl w-full max-w-[86rem] mx-auto hidden md:flex flex-row flex-nowrap px-0`}>
+           recent-post-top rounded-[12px] 2xl:px-5 max-w-[86rem] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
-      {/* 移动端 - 移除点击事件，调整高度 */}
+      {/* 移动端 - 保持优化后的样式 */}
       <div className='md:hidden w-full px-4'>
         <MobileBanner {...props} />
       </div>
@@ -30,7 +30,7 @@ const Hero = props => {
   )
 }
 
-// 移动端专用Banner (移除点击跳转)
+// 移动端Banner (无点击跳转 + 适度高度)
 function MobileBanner(props) {
   const { isDarkMode } = useGlobal()
   
@@ -38,17 +38,14 @@ function MobileBanner(props) {
     <div className={`w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative
       ${isDarkMode ? 'bg-[#1e1e1e]' : 'bg-white'}`}>
       
-      {/* 标题文字容器 */}
       <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
-        <div className='text-2xl md:text-3xl font-bold mb-1 dark:text-white'>
+        <div className='text-2xl font-bold mb-1 dark:text-white'>
           {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
         </div>
         <div className='text-sm text-gray-600 dark:text-gray-300'>
           {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
         </div>
       </div>
-
-      {/* 背景装饰元素（降低透明度） */}
       <div className='absolute inset-0 opacity-20'>
         <TagsGroupBar />
       </div>
