@@ -16,14 +16,14 @@ const Hero = props => {
         id='hero-pc'
         style={{ zIndex: 1 }}
         className={`${HEO_HERO_REVERSE ? 'xl:flex-row-reverse' : ''}
-           recent-post-top rounded-[12px] max-w-[1240px] w-full mx-auto hidden md:flex flex-row flex-nowrap`}>
+          recent-post-top rounded-[12px] w-full px-5 hidden md:flex flex-row flex-nowrap`}>  {/* 添加 px-5 */}
         <BannerGroup {...props} />
         <div className='px-1.5'></div>
         <TopGroup {...props} />
       </div>
 
       {/* 移动端 - 仅保留Banner（无点击跳转） */}
-      <div className='md:hidden w-full px-4'>
+      <div className='md:hidden w-full px-5'>
         <div className="w-full h-[40vh] max-h-[360px] rounded-xl overflow-hidden relative bg-white dark:bg-[#1e1e1e]">
           <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
             <div className='text-2xl font-bold mb-1 dark:text-white'>
