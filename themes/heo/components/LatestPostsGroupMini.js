@@ -48,8 +48,8 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
             <div
               className={
                 (selected ? ' text-indigo-400 ' : 'dark:text-gray-200') +
-                ' text-sm overflow-x-hidden hover:text-indigo-600 px-2 duration-200 w-full rounded ' +
-                ' hover:text-indigo-400 dark:hover:text-indigo-600 cursor-pointer items-center flex'
+                ' text-sm overflow-x-hidden hover:text-green-400 px-2 duration-200 w-full rounded ' +
+                ' hover:text-indigo-400 dark:hover:text-green-400 cursor-pointer items-center flex'
               }>
               <div>
                 <div className='line-clamp-2 menu-link'>{post.title}</div>
