@@ -326,7 +326,38 @@ footer {
   padding-bottom: 0 !important;
 }
 
-/* 自定义圆角 */
-.notice-bar, .card, .btn {
-  border-radius: 24px !important;
+/* 全局圆角重置 */
+:root {
+  --heo-border-radius: 24px;
+}
+
+/* 覆盖所有常用组件的圆角 */
+.notion-link-card, 
+.notion-card,
+.notion-nav-item,
+.notion-search,
+.notion-button,
+.notion-tag,
+.notion-category,
+.notice-bar,
+.article-item,
+.comment-box {
+  border-radius: var(--heo-border-radius) !important;
+}
+
+/* 特殊组件调整 */
+/* 导航菜单 */
+.header .nav-menu > * {
+  border-radius: var(--heo-border-radius) !important;
+}
+
+/* 文章卡片 */
+.post-card {
+  border-radius: var(--heo-border-radius) !important;
+  overflow: hidden;
+}
+
+/* 按钮组 */
+.btn-group .btn {
+  border-radius: var(--heo-border-radius) !important;
 }
