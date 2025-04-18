@@ -1,6 +1,5 @@
 import { BeiAnGongAn } from '@/components/BeiAnGongAn'
 import CopyRightDate from '@/components/CopyRightDate'
-import PoweredBy from '@/components/PoweredBy'
 import { siteConfig } from '@/lib/config'
 import SocialButton from './SocialButton'
 import Image from 'next/image'
@@ -10,68 +9,66 @@ const Footer = () => {
   const beianLink = siteConfig('BEI_AN_LINK')
   const BIO = siteConfig('BIO')
   return (
-    <footer className='relative flex-shrink-0 bg-gray-100 dark:bg-gray-800 justify-center text-center m-auto w-full leading-6 text-gray-600 dark:text-gray-100 text-sm'>
-      {/* 颜色过度区 */}
+    <footer className='relative flex-shrink-0 bg-white dark:bg-[#1a191d] justify-center text-center m-auto w-full leading-6 text-gray-600 dark:text-gray-100 text-sm'>
+      {/* 颜色过度区 -保持原样 */}
       <div
         id='color-transition'
-        className='h-32 bg-gradient-to-b from-[#f7f9fe] to-gray-100 dark:bg-gray-800 dark:from-inherit dark:to-inherit'
+        className='h-32 bg-gradient-to-b from-[#f7f9fe] to-white dark:bg-[#1a191d] dark:from-inherit dark:to-inherit'
       />
 
-      {/* 社交按钮 */}
+      {/* 社交按钮 -保持原样 */}
       <div className='w-full h-24'>
         <SocialButton />
       </div>
 
       <br />
 
-      {/* 底部页面信息 */}
+      {/* 底部页面信息 - 修改版 */}
       <div
         id='footer-bottom'
-        className='w-full h-21 flex flex-col p-3 lg:flex-row justify-between px-6 items-center bg-gray-200 dark:bg-gray-700'>
-        <div id='footer-bottom-left' className='flex items-center'>
-          <div className='mr-4'>
-            <Image 
-              src="/logo.png" 
-              alt="Site Logo" 
-              width={40} 
-              height={40} 
-              className='object-contain'
-            />
-          </div>
-          <div className='text-start font-sans'>
-            <PoweredBy className='text-gray-800 dark:text-gray-200' />
-          </div>
+        className='w-full min-h-[5rem] flex flex-col lg:flex-row justify-between items-center p-4 bg-gray-100 dark:bg-gray-800'>
+        
+        {/* Logo 部分 - 放大并优化布局 */}
+        <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0'>
+          <Image 
+            src="/logo.svg" 
+            alt="Site Logo" 
+            width={60} 
+            height={60} 
+            className='object-contain h-12 w-auto'
+          />
         </div>
 
-        <div id='footer-bottom-right' className='font-sans text-right'>
-          <div className='flex gap-x-1 items-center justify-end'>
-            <CopyRightDate className='text-gray-800 dark:text-gray-200' />
+        {/* 文字信息部分 - 右对齐并优化间距 */}
+        <div className='w-full flex flex-col items-end'>
+          <div className='flex flex-wrap justify-end items-center gap-x-2'>
+            <CopyRightDate className='text-gray-700 dark:text-gray-200' />
             <a
               href={'/about'}
               className='underline font-bold hover:text-gray-600 dark:hover:text-gray-300'>
               {siteConfig('AUTHOR')}
             </a>
-            {BIO && <span className='mx-1 font-medium'> | {BIO}</span>}
+            {BIO && <span className='font-medium'>| {BIO}</span>}
           </div>
           
-          <div className='flex justify-end items-center mt-1'>
+          <div className='flex flex-wrap justify-end items-center mt-2 gap-x-2'>
             {BEI_AN && (
               <>
-                <i className='fas fa-shield-alt text-gray-800 dark:text-gray-200' />{' '}
-                <a href={beianLink} className='mr-2 hover:text-gray-600 dark:hover:text-gray-300'>
+                <i className='fas fa-shield-alt text-gray-700 dark:text-gray-200' />
+                <a href={beianLink} className='hover:text-gray-600 dark:hover:text-gray-300'>
                   {siteConfig('BEI_AN')}
                 </a>
               </>
             )}
-            <BeiAnGongAn className='text-gray-800 dark:text-gray-200' />
+            <BeiAnGongAn className='text-gray-700 dark:text-gray-200' />
 
             <span className='hidden busuanzi_container_site_pv'>
-              <i className='fas fa-eye text-gray-800 dark:text-gray-200' />
-              <span className='px-1 busuanzi_value_site_pv'> </span>{' '}
+              <i className='fas fa-eye text-gray-700 dark:text-gray-200' />
+              <span className='px-1 busuanzi_value_site_pv'> </span>
             </span>
-            <span className='pl-2 hidden busuanzi_container_site_uv'>
-              <i className='fas fa-users text-gray-800 dark:text-gray-200' />{' '}
-              <span className='px-1 busuanzi_value_site_uv'> </span>{' '}
+            <span className='hidden busuanzi_container_site_uv'>
+              <i className='fas fa-users text-gray-700 dark:text-gray-200' />
+              <span className='px-1 busuanzi_value_site_uv'> </span>
             </span>
           </div>
         </div>
