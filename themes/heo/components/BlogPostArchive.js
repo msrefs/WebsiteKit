@@ -63,7 +63,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                         <Link
                           passHref
                           href={`/category/${post.category}`}
-                          className='cursor-pointer text-xs font-normal menu-link hover:text-indigo-700  dark:text-gray-600 transform'>
+                          className='cursor-pointer text-xs font-normal menu-link hover:text-green-400  dark:text-gray-600 transform'>
                           {post.category}
                         </Link>
                       </div>
@@ -74,7 +74,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                       href={post?.href}
                       passHref
                       className={
-                        ' group-hover:text-indigo-700 group-hover:dark:text-indigo-400 text-black dark:text-gray-100 dark:group-hover:text-green-400 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
+                        ' group-hover:text-green-400 group-hover:dark:text-green-400 text-black dark:text-gray-100 dark:group-hover:text-green-400 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
                       }>
                       <span className='menu-link '>{post.title}</span>
                     </Link>
