@@ -41,7 +41,7 @@ export default function DashboardMenuList() {
             role='menuitem'
             key={index}
             className={`rounded-lg cursor-pointer block ${
-              isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-100'
+              isActive ? 'bg-blue-100 text-green-300' : 'hover:bg-gray-100'
             }`}>
             <Link
               href={item.href}

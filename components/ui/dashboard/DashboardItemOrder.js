@@ -27,7 +27,7 @@ export default function DashboardItemOrder() {
         <div className='flex items-center space-x-3'>
           <a
             href='#'
-            className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
+            className='font-medium text-green-300 dark:text-blue-500 hover:underline'>
             编辑
           </a>
           <a
@@ -144,7 +144,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
               onClick={() => onPageChange(page)}
               className={`flex items-center justify-center px-3 h-8 leading-tight border ${
                 currentPage === page
-                  ? 'text-blue-600 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white'
+                  ? 'text-green-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white'
                   : 'text-gray-500 bg-white hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white'
               }`}>
               {page}
@@ -185,7 +185,7 @@ const Table = ({ columns, data }) => {
                 <input
                   id='checkbox-all'
                   type='checkbox'
-                  className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                  className='w-4 h-4 text-green-300 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-green-300 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                 />
                 <label htmlFor='checkbox-all' className='sr-only'>
                   全选
@@ -217,7 +217,7 @@ const Table = ({ columns, data }) => {
                   <input
                     id={`checkbox-${index}`}
                     type='checkbox'
-                    className='w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
+                    className='w-4 h-4 text-green-300 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-green-300 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600'
                   />
                   <label htmlFor={`checkbox-${index}`} className='sr-only'>
                     选择
