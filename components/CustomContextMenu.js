@@ -171,16 +171,16 @@ export default function CustomContextMenu(props) {
         <div className='flex justify-between'>
           <i
             onClick={handleBack}
-            className='hover:bg-green-300 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-left'></i>
+            className='hover:bg-green-400 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-left'></i>
           <i
             onClick={handleForward}
-            className='hover:bg-green-300 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-right'></i>
+            className='hover:bg-green-400 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-right'></i>
           <i
             onClick={handleRefresh}
-            className='hover:bg-green-300 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-rotate-right'></i>
+            className='hover:bg-green-400 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-rotate-right'></i>
           <i
             onClick={handleScrollTop}
-            className='hover:bg-green-300 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-up'></i>
+            className='hover:bg-green-400 hover:text-white px-2 py-2 text-center w-8 rounded cursor-pointer fa-solid fa-arrow-up'></i>
         </div>
 
         <hr className='my-2 border-dashed' />
@@ -191,7 +191,7 @@ export default function CustomContextMenu(props) {
             <div
               onClick={handleJumpToRandomPost}
               title={locale.MENU.WALK_AROUND}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-podcast mr-2' />
               <div className='whitespace-nowrap'>{locale.MENU.WALK_AROUND}</div>
             </div>
@@ -201,7 +201,7 @@ export default function CustomContextMenu(props) {
             <Link
               href='/category'
               title={locale.MENU.CATEGORY}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-square-minus mr-2' />
               <div className='whitespace-nowrap'>{locale.MENU.CATEGORY}</div>
             </Link>
@@ -211,7 +211,7 @@ export default function CustomContextMenu(props) {
             <Link
               href='/tag'
               title={locale.MENU.TAGS}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-tag mr-2' />
               <div className='whitespace-nowrap'>{locale.MENU.TAGS}</div>
             </Link>
@@ -226,7 +226,7 @@ export default function CustomContextMenu(props) {
             <div
               onClick={handleCopy}
               title={locale.MENU.COPY}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-copy mr-2' />
               <div className='whitespace-nowrap'>{locale.MENU.COPY}</div>
             </div>
@@ -236,7 +236,7 @@ export default function CustomContextMenu(props) {
             <div
               onClick={handleCopyLink}
               title={locale.MENU.SHARE_URL}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-arrow-up-right-from-square mr-2' />
               <div className='whitespace-nowrap'>{locale.MENU.SHARE_URL}</div>
             </div>
@@ -248,7 +248,7 @@ export default function CustomContextMenu(props) {
               title={
                 isDarkMode ? locale.MENU.LIGHT_MODE : locale.MENU.DARK_MODE
               }
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               {isDarkMode ? (
                 <i className='fa-regular fa-sun mr-2' />
               ) : (
@@ -265,7 +265,7 @@ export default function CustomContextMenu(props) {
             <div
               onClick={handleChangeTheme}
               title={locale.MENU.THEME_SWITCH}
-              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-300 hover:text-white rounded-lg duration-200 transition-all'>
+              className='w-full px-2 h-10 flex justify-start items-center flex-nowrap cursor-pointer hover:bg-green-400 hover:text-white rounded-lg duration-200 transition-all'>
               <i className='fa-solid fa-palette mr-2' />
               <div className='whitespace-nowrap'>
                 {locale.MENU.THEME_SWITCH}

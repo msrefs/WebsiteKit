@@ -50,7 +50,7 @@ export default function DashboardItemHome() {
         </div>
         <div className='bg-white shadow-lg p-6 rounded-lg hover:scale-105 transition-all transform duration-300'>
           <h3 className='text-xl text-gray-800 dark:text-white'>用户总数</h3>
-          <p className='text-3xl text-green-300'>12,300</p>
+          <p className='text-3xl text-green-400'>12,300</p>
         </div>
         <div className='bg-white shadow-lg p-6 rounded-lg hover:scale-105 transition-all transform duration-300'>
           <h3 className='text-xl text-gray-800 dark:text-white'>

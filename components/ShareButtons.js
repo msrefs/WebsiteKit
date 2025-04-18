@@ -316,7 +316,7 @@ const ShareButtons = ({ post }) => {
             return (
               <button
                 key={singleService}
-                className='cursor-pointer bg-green-300 text-white rounded-full mx-1'>
+                className='cursor-pointer bg-green-400 text-white rounded-full mx-1'>
                 <a
                   target='_blank'
                   rel='noreferrer'
