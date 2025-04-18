@@ -325,3 +325,8 @@ footer {
   margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
+
+/* 自定义圆角 */
+.notice-bar, .card, .btn {
+  border-radius: 24px !important;
+}
