@@ -57,7 +57,7 @@ export const MenuItemCollapse = ({ link }) => {
 
       {/* 折叠子菜单 */}
       {hasSubMenu && (
-        <Collapse isOpen={isOpen} className='rounded-xl'>
+        <Collapse isOpen={isOpen} className='rounded-[24px]'>
           {link.subMenus.map((sLink, index) => {
             return (
               <div

@@ -24,7 +24,7 @@ const HexoRecentComments = props => {
   }, [])
 
   return (
-    <section className='card shadow-md hover:shadow-md dark:text-gray-300 border dark:border-black rounded-xl lg:p-6 p-4 bg-white dark:bg-hexo-black-gray lg:duration-100'>
+    <section className='card shadow-md hover:shadow-md dark:text-gray-300 border dark:border-black rounded-[24px] lg:p-6 p-4 bg-white dark:bg-hexo-black-gray lg:duration-100'>
       <div className=' mb-2 px-1 justify-between'>
         <i className='mr-2 fas fas fa-comment' />
         {locale.COMMON.RECENT_COMMENTS}

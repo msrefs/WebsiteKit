@@ -32,7 +32,7 @@ const ThemeSwitch = () => {
           style={{ left: '0px', top: '80vh' }}
           className='border dark:border-gray-600 fixed group flex flex-col items-start space-y-2 overflow-hidden z-20 p-3
                     dark:text-white bg-white dark:bg-black 
-                      rounded-xl shadow-lg hover:scale-105 hover:shadow-2xl   '>
+                      rounded-[24px] shadow-lg hover:scale-105 hover:shadow-2xl   '>
           {/* 主题切换按钮 */}
           <div className='text-sm flex items-center group-hover:w-44 h-4 text-center duration-200'>
             <i
@@ -112,7 +112,7 @@ const ThemeSwitch = () => {
                 </div>
                 <LazyImage
                   src={`/images/themes-preview/${t}.png`}
-                  className='cursor-pointer shadow-lg rounded-xl hover:scale-110 duration-200'
+                  className='cursor-pointer shadow-lg rounded-[24px] hover:scale-110 duration-200'
                 />
               </div>
             )

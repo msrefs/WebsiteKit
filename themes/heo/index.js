@@ -224,7 +224,7 @@ const LayoutArchive = props => {
   // 归档页顶部显示条，如果是默认归档则不显示。分类详情页显示分类列表，标签详情页显示当前标签
 
   return (
-    <div className='p-5 rounded-xl border dark:border-gray-600 max-w-6xl w-full bg-white dark:bg-[#1e1e1e]'>
+    <div className='p-5 rounded-[24px] border dark:border-gray-600 max-w-6xl w-full bg-white dark:bg-[#1e1e1e]'>
       {/* 文章分类条 */}
       <CategoryBar {...props} border={false} />
 
@@ -425,7 +425,7 @@ const LayoutCategoryIndex = props => {
               legacyBehavior>
               <div
                 className={
-                  'group mr-5 mb-5 flex flex-nowrap items-center border bg-white text-2xl rounded-xl dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-green-400 transition-all hover:scale-110 duration-150'
+                  'group mr-5 mb-5 flex flex-nowrap items-center border bg-white text-2xl rounded-[24px] dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-green-400 transition-all hover:scale-110 duration-150'
                 }>
                 <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
                 {category.name}
@@ -467,7 +467,7 @@ const LayoutTagIndex = props => {
               legacyBehavior>
               <div
                 className={
-                  'group flex flex-nowrap items-center border bg-white text-2xl rounded-xl dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-green-400 transition-all hover:scale-110 duration-150'
+                  'group flex flex-nowrap items-center border bg-white text-2xl rounded-[24px] dark:hover:text-white px-4 cursor-pointer py-3 hover:text-white hover:bg-green-400 transition-all hover:scale-110 duration-150'
                 }>
                 <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
                 {tag.name}

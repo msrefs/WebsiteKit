@@ -13,7 +13,7 @@ export function InfoCard(props) {
   const text3 = siteConfig('HEO_INFO_CARD_TEXT3', null, CONFIG)
 
   return (
-    <Card className='wow fadeInUp bg-white dark:bg-[#1e1e1e] flex w-72 relative border border-gray-200 dark:border-gray-700 transition-colors duration-300 rounded-xl px-4 py-4 shadow-sm'>
+    <Card className='wow fadeInUp bg-white dark:bg-[#1e1e1e] flex w-72 relative border border-gray-200 dark:border-gray-700 transition-colors duration-300 rounded-[24px] px-4 py-4 shadow-sm'>
       <div className='flex justify-between items-center w-full gap-3'>
         {/* 社交按钮1 - 方形按钮 */}
         {url1 && (

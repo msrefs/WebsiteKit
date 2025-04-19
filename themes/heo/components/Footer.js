@@ -10,30 +10,30 @@ const Footer = () => {
   const BIO = siteConfig('BIO')
   return (
     <footer className='relative flex-shrink-0 bg-white dark:bg-[#18171D] justify-center text-center m-auto w-full leading-6 text-gray-600 dark:text-gray-100 text-sm'>
-      {/* 颜色过度区 - 完全移除暗色模式下的渐变 */}
+      {/* 颜色过度区 */}
       <div
         id='color-transition'
         className='h-32 bg-gradient-to-b from-[#f7f9fe] to-white dark:bg-[#18171D]'
       />
 
-      {/* 社交按钮 - 背景色与过渡区一致 */}
+      {/* 社交按钮 */}
       <div className='w-full h-24 bg-white dark:bg-[#18171D]'>
         <SocialButton />
       </div>
 
-      {/* 底部信息区 - 添加上端圆角 */}
+      {/* 底部信息区 */}
       <div
         id='footer-bottom'
         className='w-full min-h-[5rem] flex flex-col lg:flex-row justify-between items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-t-2xl mt-[-1px]'>
         
-        {/* Logo 部分 - 缩小到75% (45px) */}
-        <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start'>
+        {/* Logo 部分 - 添加mt-2向下移动 */}
+        <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start mt-2'>
           <Image 
             src="/logo.svg" 
             alt="Site Logo" 
             width={45}
             height={45}
-            className='object-contain h-9 w-auto' // 75% of original h-12
+            className='object-contain h-9 w-auto'
           />
         </div>
 

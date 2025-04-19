@@ -52,7 +52,7 @@ export default function SideRight(props) {
         {/* 最新文章列表 */}
         <div
           className={
-            'border wow fadeInUp  hover:border-green-400  dark:hover:border-green-400 duration-200 dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-xl lg:p-6 p-4 hidden lg:block bg-white'
+            'border wow fadeInUp  hover:border-green-400  dark:hover:border-green-400 duration-200 dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-[24px] lg:p-6 p-4 hidden lg:block bg-white'
           }>
           <LatestPostsGroupMini {...props} />
         </div>
