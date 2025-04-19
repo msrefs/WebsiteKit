@@ -136,7 +136,7 @@ function DarkModeBlockButton() {
     <button
       onClick={handleChangeDarkMode}
       className={
-        'group duration-200 hover:text-white hover:shadow-md hover:bg-green-400 flex justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white dark:bg-green-400  rounded-lg'
+        'group duration-200 hover:text-white hover:shadow-md hover:bg-green-400 flex justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white dark:bg-green-400  rounded-full'
       }>
       <DarkModeButton cRef={darkModeRef} className='group-hover:text-white' />{' '}
       {isDarkMode ? locale.MENU.LIGHT_MODE : locale.MENU.DARK_MODE}
@@ -152,7 +152,7 @@ function Button({ title, url }) {
     <Link
       href={url}
       className={
-        'duration-200 hover:text-white hover:shadow-md flex cursor-pointer justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white hover:bg-green-400 dark:bg-[#1e1e1e] rounded-lg'
+        'duration-200 hover:text-white hover:shadow-md flex cursor-pointer justify-between items-center px-2 py-2 border dark:border-gray-600 bg-white hover:bg-green-400 dark:bg-[#1e1e1e] rounded-full'
       }>
       {title}
     </Link>

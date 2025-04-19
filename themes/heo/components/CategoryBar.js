@@ -37,7 +37,7 @@ export default function CategoryBar(props) {
       <div
         id='category-bar-items'
         ref={categoryBarItemsRef}
-        className='scroll-smooth max-w-4xl rounded-lg scroll-hidden flex justify-start flex-nowrap items-center overflow-x-scroll'>
+        className='scroll-smooth max-w-4xl rounded-full scroll-hidden flex justify-start flex-nowrap items-center overflow-x-scroll'>
         <MenuItem href='/' name={locale.NAV.INDEX} />
         {categoryOptions?.map((c, index) => (
           <MenuItem key={index} href={`/category/${c.name}`} name={c.name} />

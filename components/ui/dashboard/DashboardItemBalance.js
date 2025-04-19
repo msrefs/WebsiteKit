@@ -55,7 +55,7 @@ export default function DashboardItemBalance() {
   }, [selectedCard])
 
   return (
-    <div className='bg-white rounded-lg shadow-lg p-6 border'>
+    <div className='bg-white rounded-full shadow-lg p-6 border'>
       <div>
         <h2 className='text-2xl font-bold mb-4'>余额充值中心</h2>
         <hr className='my-2' />
@@ -66,7 +66,7 @@ export default function DashboardItemBalance() {
         {cards?.map((card, index) => (
           <div
             key={index}
-            className={`block max-w-sm p-6 text-center border cursor-pointer rounded-lg shadow  ${card.className}`}
+            className={`block max-w-sm p-6 text-center border cursor-pointer rounded-full shadow  ${card.className}`}
             onClick={() => handleCardSelect(index)}>
             <h5 className='mb-2 text-2xl font-bold tracking-tight'>
               {card.title}
@@ -83,7 +83,7 @@ export default function DashboardItemBalance() {
           {cardData?.map((item, index) => (
             <div
               key={index}
-              className={`border rounded-lg text-center bg-gray-50 py-4 cursor-pointer ${
+              className={`border rounded-full text-center bg-gray-50 py-4 cursor-pointer ${
                 selectedCard === index ? 'bg-blue-100' : ''
               }`}
               onClick={() => handleCardSelect(index)}>
@@ -104,7 +104,7 @@ export default function DashboardItemBalance() {
             <input
               type='number'
               id='amount'
-              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
+              className='bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'
               placeholder='输入数量'
               value={amount}
               onChange={handleAmountChange}
@@ -119,7 +119,7 @@ export default function DashboardItemBalance() {
           </div>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             在线充值
           </button>
         </div>

@@ -64,12 +64,12 @@ const SearchInput = props => {
   }
 
   return (
-    <div className={'flex w-full rounded-lg ' + className}>
+    <div className={'flex w-full rounded-full ' + className}>
       <input
         ref={searchInputRef}
         type="text"
         className={
-          'outline-none w-full text-sm pl-5 rounded-lg transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-white dark:bg-gray-500'
+          'outline-none w-full text-sm pl-5 rounded-full transition focus:shadow-lg dark:text-gray-300 font-light leading-10 text-black bg-white dark:bg-gray-500'
         }
         onKeyUp={handleKeyUp}
         onCompositionStart={lockSearchInput}

@@ -381,7 +381,7 @@ const Layout404 = props => {
                 </h1>
                 <div className='dark:text-white'>请尝试站内搜索寻找文章</div>
                 <Link href='/'>
-                  <button className='bg-blue-500 py-2 px-4 text-white shadow rounded-lg hover:bg-green-400 hover:shadow-md duration-200 transition-all'>
+                  <button className='bg-blue-500 py-2 px-4 text-white shadow rounded-full hover:bg-green-400 hover:shadow-md duration-200 transition-all'>
                     回到主页
                   </button>
                 </Link>
@@ -429,7 +429,7 @@ const LayoutCategoryIndex = props => {
                 }>
                 <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
                 {category.name}
-                <div className='bg-[#f1f3f8] ml-1 px-2 rounded-lg group-hover:text-green-400 '>
+                <div className='bg-[#f1f3f8] ml-1 px-2 rounded-full group-hover:text-green-400 '>
                   {category.count}
                 </div>
               </div>
@@ -471,7 +471,7 @@ const LayoutTagIndex = props => {
                 }>
                 <HashTag className={'w-5 h-5 stroke-gray-500 stroke-2'} />
                 {tag.name}
-                <div className='bg-[#f1f3f8] ml-1 px-2 rounded-lg group-hover:text-green-400 '>
+                <div className='bg-[#f1f3f8] ml-1 px-2 rounded-full group-hover:text-green-400 '>
                   {tag.count}
                 </div>
               </div>

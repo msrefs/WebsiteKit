@@ -95,7 +95,7 @@ export default function DashboardItemOrder() {
   }
 
   return (
-    <div className='bg-white rounded-lg shadow-lg p-6 border'>
+    <div className='bg-white rounded-full shadow-lg p-6 border'>
       <div className='flex flex-col'>
         <Table columns={columns} data={data} />
         <Pagination
@@ -175,7 +175,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
  */
 const Table = ({ columns, data }) => {
   return (
-    <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
+    <div className='relative overflow-x-auto shadow-md sm:rounded-full'>
       <table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
         {/* 表头 */}
         <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>

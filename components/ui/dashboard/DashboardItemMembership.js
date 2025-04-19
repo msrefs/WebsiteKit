@@ -70,7 +70,7 @@ export default function DashboardItemMembership() {
   }, [selectedMembership])
 
   return (
-    <div className='bg-white rounded-lg shadow-lg p-6 border'>
+    <div className='bg-white rounded-full shadow-lg p-6 border'>
       <div>
         <h2 className='text-2xl font-bold mb-4'>会员注册</h2>
         <hr className='my-2' />
@@ -81,7 +81,7 @@ export default function DashboardItemMembership() {
         {memberships.map((membership, index) => (
           <div
             key={index}
-            className={`block max-w-sm p-6 text-center border cursor-pointer rounded-lg shadow ${
+            className={`block max-w-sm p-6 text-center border cursor-pointer rounded-full shadow ${
               selectedMembership === index ? 'bg-blue-100' : 'bg-gray-50'
             }`}
             onClick={() => handleMembershipSelect(index)}>
@@ -106,7 +106,7 @@ export default function DashboardItemMembership() {
           </div>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             立即开通
           </button>
         </div>

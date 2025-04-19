@@ -32,7 +32,7 @@ export default function DashboardMenuList() {
   return (
     <ul
       role='menu'
-      className='side-tabs-list bg-white border rounded-lg shadow-lg p-2 space-y-2 mb-6'>
+      className='side-tabs-list bg-white border rounded-full shadow-lg p-2 space-y-2 mb-6'>
       {dashBoardMenus.map((item, index) => {
         // 判断当前菜单是否高亮
         const isActive = asPath === item.href
@@ -40,7 +40,7 @@ export default function DashboardMenuList() {
           <li
             role='menuitem'
             key={index}
-            className={`rounded-lg cursor-pointer block ${
+            className={`rounded-full cursor-pointer block ${
               isActive ? 'bg-blue-100 text-green-400' : 'hover:bg-gray-100'
             }`}>
             <Link
