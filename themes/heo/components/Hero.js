@@ -5,17 +5,35 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-4'>
-      {/* PC端保持不变 */}
+      {/* PC端 - 完整恢复 */}
       <div className='max-w-[86rem] w-full mx-auto px-5 font-bold'>
-        {/* ... PC端内容保持不变 ... */}
+        <div 
+          className={`
+            animate__animated animate__fadeIn animate__fast
+            rounded-[12px] w-full hidden md:block h-64 
+            bg-white dark:bg-[#1e1e1e] 
+            border dark:border-gray-700 
+            relative overflow-hidden mb-4
+            transition-colors duration-200
+          `}>
+          <div className='z-10 flex flex-col absolute top-10 left-10'>
+            <div className='text-4xl font-bold mb-3 dark:text-white transition-colors duration-200'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+              <br />
+              {siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}
+            </div>
+            <div className='text-xs text-gray-600 dark:text-gray-200 transition-colors duration-200'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* 移动端 - 调整高度 */}
+      {/* 移动端 - 保持修改后的样式 */}
       <div className='md:hidden w-full px-5'>
         <div className='relative'>
-          {/* 主卡片 - 高度调整为 h-48 (192px) */}
           <div className={`
-            w-full h-48 overflow-hidden  /* 原h-64改为h-48 */
+            w-full h-48 overflow-hidden
             bg-white dark:bg-[#1e1e1e]
             border dark:border-gray-700
             transition-colors duration-200
@@ -31,7 +49,6 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* 按钮保持不变 */}
           <Link 
             href="https://status.neotec.uk/" 
             target="_blank"
