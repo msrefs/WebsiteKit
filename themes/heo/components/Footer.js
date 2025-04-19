@@ -9,27 +9,27 @@ const Footer = () => {
   const beianLink = siteConfig('BEI_AN_LINK')
   const BIO = siteConfig('BIO')
   return (
-    <footer className='relative flex-shrink-0 bg-white dark:bg-[#1a191d] justify-center text-center m-auto w-full leading-6 text-gray-600 dark:text-gray-100 text-sm'>
-      {/* 颜色过度区 -保持原样 */}
+    <footer className='relative flex-shrink-0 bg-white dark:bg-[#18171D] justify-center text-center m-auto w-full leading-6 text-gray-600 dark:text-gray-100 text-sm'>
+      {/* 颜色过度区 */}
       <div
         id='color-transition'
-        className='h-32 bg-gradient-to-b from-[#f7f9fe] to-white dark:bg-[#1a191d] dark:from-inherit dark:to-inherit'
+        className='h-32 bg-gradient-to-b from-[#f7f9fe] to-white dark:bg-[#18171D] dark:from-inherit dark:to-inherit'
       />
 
-      {/* 社交按钮 -保持原样 */}
-      <div className='w-full h-24'>
+      {/* 社交按钮 - 更新暗色背景为#18171D */}
+      <div className='w-full h-24 bg-white dark:bg-[#18171D]'>
         <SocialButton />
       </div>
 
       <br />
 
-      {/* 底部页面信息 - 修改版 */}
+      {/* 底部页面信息 */}
       <div
         id='footer-bottom'
         className='w-full min-h-[5rem] flex flex-col lg:flex-row justify-between items-center p-4 bg-gray-100 dark:bg-gray-800'>
         
-        {/* Logo 部分 - 放大并优化布局 */}
-        <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0'>
+        {/* Logo 部分 */}
+        <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start'>
           <Image 
             src="/logo.svg" 
             alt="Site Logo" 
@@ -39,9 +39,9 @@ const Footer = () => {
           />
         </div>
 
-        {/* 文字信息部分 - 右对齐并优化间距 */}
-        <div className='w-full flex flex-col items-end'>
-          <div className='flex flex-wrap justify-end items-center gap-x-2'>
+        {/* 文字信息部分 */}
+        <div className='w-full flex flex-col items-start lg:items-end'>
+          <div className='flex flex-wrap justify-start lg:justify-end items-center gap-x-2'>
             <CopyRightDate className='text-gray-700 dark:text-gray-200' />
             <a
               href={'/about'}
@@ -51,7 +51,7 @@ const Footer = () => {
             {BIO && <span className='font-medium'>| {BIO}</span>}
           </div>
           
-          <div className='flex flex-wrap justify-end items-center mt-2 gap-x-2'>
+          <div className='flex flex-wrap justify-start lg:justify-end items-center mt-2 gap-x-2'>
             {BEI_AN && (
               <>
                 <i className='fas fa-shield-alt text-gray-700 dark:text-gray-200' />
