@@ -4,11 +4,11 @@ import CONFIG from '../config'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-4'>
-      {/* PC端 - 使用与NoticeBar相同的宽度规则 */}
-      <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-5 font-bold'>
+      {/* PC端 - 仅调整宽度规则与NoticeBar一致 */}
+      <div className='max-w-[86rem] w-full mx-auto px-5 font-bold'>
         <div 
           id='hero-pc'
-          className='rounded-[12px] w-full hidden md:block h-64 bg-white dark:bg-[#1e1e1e] border dark:border-gray-700 relative overflow-hidden'>
+          className='rounded-[12px] w-full hidden md:block h-64 bg-white dark:bg-[#1e1e1e] border dark:border-gray-700 relative overflow-hidden mb-4'>
           <div className='z-10 flex flex-col absolute top-10 left-10'>
             <div className='text-4xl font-bold mb-3 dark:text-white'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
