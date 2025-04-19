@@ -18,48 +18,58 @@ export function InfoCard(props) {
   const icon2 = siteConfig('HEO_INFO_CARD_ICON2', null, CONFIG)
 
   return (
-    <Card className='wow fadeInUp bg-gradient-to-r from-blue-500 to-blue-400 dark:bg-gradient-to-r dark:from-blue-500 dark:to-blue-400 text-white flex flex-col w-72 overflow-hidden relative border border-[#E5E7EB] hover:border-[#4F65F0] transition-colors duration-300'>
+    <Card className='wow fadeInUp bg-white dark:bg-[#1e1e1e] flex flex-col w-72 overflow-hidden relative border border-gray-200 dark:border-gray-700 hover:border-green-400 dark:hover:border-green-500 transition-colors duration-300 rounded-lg p-5 shadow-sm'>
       {/* 信息卡牌第一行 */}
-      <div className='flex justify-between'>
+      <div className='flex justify-between items-start mb-4'>
         {/* 问候语 */}
         <GreetingsWords />
         {/* 头像 */}
-        <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-6 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex transform transitaion-all duration-200`}>
+        <div className={`${isSlugPage ? 'absolute right-0 -mt-8 -mr-6 hover:opacity-0 hover:scale-150 blur' : 'cursor-pointer'} justify-center items-center flex transform transition-all duration-300 hover:scale-110`}>
           <LazyImage
             src={siteInfo?.icon}
-            width={isSlugPage ? 100 : 28}
+            width={isSlugPage ? 100 : 32}
+            height={isSlugPage ? 100 : 32}
+            className="rounded-full border-2 border-gray-200 dark:border-gray-600 hover:border-green-400 dark:hover:border-green-500 transition-all duration-300"
             alt={siteConfig('AUTHOR')}
           />
         </div>
       </div>
 
-      <h2 className='text-3xl font-extrabold mt-3'>{siteConfig('AUTHOR')}</h2>
+      <h2 className='text-3xl font-bold mt-2 mb-3 text-gray-800 dark:text-gray-100'>{siteConfig('AUTHOR')}</h2>
 
       {/* 公告栏 */}
-      <Announcement post={notice} style={{ color: 'white !important' }} />
+      <Announcement 
+        post={notice} 
+        className="bg-gray-50 dark:bg-gray-800 rounded-lg p-3 mb-4 border border-gray-200 dark:border-gray-700 hover:border-green-400 dark:hover:border-green-500 transition-colors duration-300" 
+      />
 
-      <div className='flex justify-between'>
-        <div className='flex space-x-3'>
+      <div className='flex justify-between items-center mt-auto'>
+        <div className='flex space-x-2'>
           {/* 社交按钮 */}
           {url1 && (
-            <div className='w-10 text-center bg-white/20 backdrop-blur-sm p-2 rounded-full transition-all duration-200 hover:bg-white/40 hover:scale-105 border border-white/30'>
-              <Link href={url1}>
-                <i className={`${icon1} text-white`} />
-              </Link>
-            </div>
+            <SocialButton url={url1} icon={icon1} />
           )}
           {url2 && (
-            <div className='w-10 text-center bg-white/20 backdrop-blur-sm p-2 rounded-full transition-all duration-200 hover:bg-white/40 hover:scale-105 border border-white/30'>
-              <Link href={url2}>
-                <i className={`${icon2} text-white`} />
-              </Link>
-            </div>
+            <SocialButton url={url2} icon={icon2} />
           )}
         </div>
         {/* 了解更多按钮 */}
         <MoreButton />
       </div>
     </Card>
+  )
+}
+
+/**
+ * 社交按钮组件
+ */
+function SocialButton({ url, icon }) {
+  return (
+    <Link href={url} target="_blank" rel="noopener noreferrer">
+      <div className='w-9 h-9 flex items-center justify-center bg-green-500 hover:bg-green-600 rounded-full transition-all duration-300 hover:scale-110 border border-green-600 hover:border-green-700 shadow-sm'>
+        <i className={`${icon} text-white text-lg`} />
+      </div>
+    </Link>
   )
 }
 
@@ -74,9 +84,9 @@ function MoreButton() {
   }
   return (
     <Link href={url3}>
-      <div className='group bg-white/20 backdrop-blur-sm border border-white/30 hover:border-white/60 text-white flex items-center transition-all duration-200 py-2 px-3 rounded-full space-x-1 hover:bg-white/40 hover:scale-[1.02]'>
-        <ArrowRightCircle className='group-hover:stroke-white w-6 h-6 transition-all duration-100' />
-        <div className='font-bold'>{text3}</div>
+      <div className='group bg-green-500 hover:bg-green-600 text-white flex items-center transition-all duration-300 py-2 px-4 rounded-full space-x-2 hover:scale-105 shadow-sm'>
+        <ArrowRightCircle className='w-5 h-5 transition-all duration-300' />
+        <div className='font-semibold text-sm'>{text3}</div>
       </div>
     </Link>
   )
@@ -96,7 +106,7 @@ function GreetingsWords() {
   return (
     <div
       onClick={handleChangeGreeting}
-      className='select-none cursor-pointer py-1 px-2 bg-white/20 backdrop-blur-sm hover:bg-white/40 text-sm rounded-lg transition-all duration-200 border border-white/30'>
+      className='select-none cursor-pointer py-1.5 px-3 bg-green-500 hover:bg-green-600 text-white text-sm rounded-md transition-all duration-300 border border-green-600 hover:border-green-700 shadow-sm'>
       {greeting}
     </div>
   )
