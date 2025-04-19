@@ -31,10 +31,10 @@ const Footer = () => {
         {/* Logo 部分 */}
         <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start'>
           <Image 
-            src="/logo.png" 
+            src="/logo.svg" 
             alt="Site Logo" 
-            width={60} 
-            height={60} 
+            width={50} 
+            height={50} 
             className='object-contain h-12 w-auto'
           />
         </div>
