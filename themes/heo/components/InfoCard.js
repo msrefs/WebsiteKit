@@ -14,31 +14,31 @@ export function InfoCard(props) {
 
   return (
     <Card className='wow fadeInUp bg-white dark:bg-[#1e1e1e] flex w-72 relative border border-gray-200 dark:border-gray-700 transition-colors duration-300 rounded-xl p-4 shadow-sm'>
-      <div className='flex justify-between items-center w-full space-x-3'>
-        {/* 社交按钮1 */}
+      <div className='flex justify-between items-center w-full gap-2'>
+        {/* 社交按钮1 - 固定宽度 */}
         {url1 && (
-          <Link href={url1} target="_blank" rel="noopener noreferrer">
-            <div className='flex-1 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 py-3 px-4 rounded-lg space-x-2 hover:scale-[1.02] shadow-md hover:shadow-lg'>
+          <Link href={url1} target="_blank" rel="noopener noreferrer" className='flex-none'>
+            <div className='w-12 h-12 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 rounded-lg hover:scale-[1.02] shadow-md hover:shadow-lg'>
               <i className={`${icon1} text-white text-lg`} />
             </div>
           </Link>
         )}
         
-        {/* 社交按钮2 */}
+        {/* 社交按钮2 - 固定宽度 */}
         {url2 && (
-          <Link href={url2} target="_blank" rel="noopener noreferrer">
-            <div className='flex-1 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 py-3 px-4 rounded-lg space-x-2 hover:scale-[1.02] shadow-md hover:shadow-lg'>
+          <Link href={url2} target="_blank" rel="noopener noreferrer" className='flex-none'>
+            <div className='w-12 h-12 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 rounded-lg hover:scale-[1.02] shadow-md hover:shadow-lg'>
               <i className={`${icon2} text-white text-lg`} />
             </div>
           </Link>
         )}
         
-        {/* 了解更多按钮 */}
+        {/* 了解更多按钮 - 自动扩展宽度 */}
         {url3 && (
-          <Link href={url3}>
-            <div className='flex-1 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 py-3 px-4 rounded-lg space-x-2 hover:scale-[1.02] shadow-md hover:shadow-lg'>
-              <ArrowRightCircle className='w-5 h-5' />
-              {text3 && <span className='font-medium text-sm'>{text3}</span>}
+          <Link href={url3} className='flex-1 min-w-0'>
+            <div className='w-full bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 py-3 px-4 rounded-lg hover:scale-[1.02] shadow-md hover:shadow-lg whitespace-nowrap'>
+              <ArrowRightCircle className='w-5 h-5 mr-2' />
+              {text3 && <span className='font-medium text-sm truncate'>{text3}</span>}
             </div>
           </Link>
         )}

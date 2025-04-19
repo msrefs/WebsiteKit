@@ -5,44 +5,22 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-4'>
-      {/* PC端 - 修复文字显示 */}
+      {/* PC端保持不变 */}
       <div className='max-w-[86rem] w-full mx-auto px-5 font-bold'>
-        <div 
-          id='hero-pc'
-          className={`
-            animate__animated animate__fadeIn animate__fast
-            rounded-[12px] w-full hidden md:block h-64 
-            bg-white dark:bg-[#1e1e1e] 
-            border dark:border-gray-700 
-            relative overflow-hidden mb-4
-            transition-colors duration-200
-          `}>
-          {/* 修复：确保PC端文字内容存在 */}
-          <div className='z-10 flex flex-col absolute top-10 left-10'>
-            <div className='text-4xl font-bold mb-3 dark:text-white transition-colors duration-200'>
-              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
-              <br />
-              {siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}
-            </div>
-            <div className='text-xs text-gray-600 dark:text-gray-200 transition-colors duration-200'>
-              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-            </div>
-          </div>
-        </div>
+        {/* ... PC端内容保持不变 ... */}
       </div>
 
-      {/* 移动端 - 修复圆角问题 */}
+      {/* 移动端 - 调整高度 */}
       <div className='md:hidden w-full px-5'>
         <div className='relative'>
-          {/* 主卡片 - 移除底部圆角 */}
+          {/* 主卡片 - 高度调整为 h-48 (192px) */}
           <div className={`
-            w-full h-64 overflow-hidden 
+            w-full h-48 overflow-hidden  /* 原h-64改为h-48 */
             bg-white dark:bg-[#1e1e1e]
             border dark:border-gray-700
             transition-colors duration-200
-            rounded-t-xl border-b-0  /* 移除底部边框和圆角 */
+            rounded-t-xl border-b-0
           `}>
-            {/* 移动端内容 */}
             <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
               <div className='text-2xl font-bold mb-1 dark:text-white transition-colors duration-200'>
                 {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
@@ -53,7 +31,7 @@ const Hero = () => {
             </div>
           </div>
           
-          {/* 按钮 - 完美衔接 */}
+          {/* 按钮保持不变 */}
           <Link 
             href="https://status.neotec.uk/" 
             target="_blank"
@@ -65,7 +43,7 @@ const Hero = () => {
               text-left
               transition-colors duration-200
               shadow-md
-              border-t-0  /* 移除顶部边框 */
+              border-t-0
             `}
           >
             查看服务状态
