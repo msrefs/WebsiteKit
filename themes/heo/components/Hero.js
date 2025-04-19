@@ -4,8 +4,8 @@ import CONFIG from '../config'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-4'>
-      {/* PC端 - 修正边距 */}
-      <div className='max-w-[86rem] w-full mx-auto px-5 xl:px-[50px]'>
+      {/* PC端 - 使用与NoticeBar相同的宽度规则 */}
+      <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-5 font-bold'>
         <div 
           id='hero-pc'
           className='rounded-[12px] w-full hidden md:block h-64 bg-white dark:bg-[#1e1e1e] border dark:border-gray-700 relative overflow-hidden'>
