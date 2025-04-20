@@ -24,7 +24,7 @@ const Footer = () => {
       {/* 底部信息区 */}
       <div
         id='footer-bottom'
-        className='w-full min-h-[5rem] flex flex-col lg:flex-row justify-between items-center p-4 bg-gray-100 dark:bg-gray-800 rounded-t-[24px] mt-[-1px]'>
+        className='w-full min-h-[5rem] flex flex-col lg:flex-row justify-between items-center p-4 bg-gray-100 dark:[1e1e1e] rounded-t-[24px] mt-[-1px]'>
         
         {/* Logo 部分 - 添加mt-2向下移动 */}
         <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start mt-2'>

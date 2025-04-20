@@ -74,7 +74,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                       href={post?.href}
                       passHref
                       className={
-                        ' group-hover:text-green-400 group-hover:dark:text-green-400 text-black dark:text-gray-100 dark:group-hover:text-green-400 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
+                        ' group-hover:text-green-400 group-hover:dark:text-green-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
                       }>
                       <span className='menu-link '>{post.title}</span>
                     </Link>
