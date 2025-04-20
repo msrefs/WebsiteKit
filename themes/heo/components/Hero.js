@@ -10,7 +10,7 @@ const Hero = () => {
         <div 
           className={`
             animate__animated animate__fadeIn animate__fast
-            rounded-[12px] w-full hidden md:block h-64 
+            rounded-[24px] w-full hidden md:block h-64 
             bg-white dark:bg-[#1e1e1e] 
             border dark:border-gray-700 
             relative overflow-hidden mb-4
@@ -37,7 +37,7 @@ const Hero = () => {
             bg-white dark:bg-[#1e1e1e]
             border dark:border-gray-700
             transition-colors duration-200
-            rounded-t-xl border-b-0
+            rounded-t-[24px] border-b-0
           `}>
             <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
               <div className='text-2xl font-bold mb-1 dark:text-white transition-colors duration-200'>
@@ -56,7 +56,7 @@ const Hero = () => {
               block w-full
               bg-green-400 hover:bg-green-500
               text-white font-bold
-              py-3 px-6 rounded-b-xl
+              py-3 px-6 rounded-b-[24px]
               text-left
               transition-colors duration-200
               shadow-md

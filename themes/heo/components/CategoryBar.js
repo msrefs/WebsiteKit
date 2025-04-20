@@ -44,7 +44,7 @@ export default function CategoryBar(props) {
         ))}
       </div>
 
-      <div id='category-bar-next' className='flex items-center justify-center'>
+      <div id='category-bar-next' className='flex items-center justify-center pr-2'> {/* 添加了pr-2 */}
         <div
           id='right'
           className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-green-400 hover:text-green-400'
@@ -76,7 +76,7 @@ const MenuItem = ({ href, name }) => {
   const selected = category === name
   return (
     <div
-      className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-md text-gray-900 dark:text-white hover:text-white hover:bg-green-400 dark:hover:bg-green-400 ${selected ? 'text-white bg-green-400 dark:bg-green-400' : ''}`}>
+      className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-full text-gray-900 dark:text-white hover:text-white hover:bg-green-400 dark:hover:bg-green-400 ${selected ? 'text-white bg-green-400 dark:bg-green-400' : ''}`}>
       <Link href={href}>{name}</Link>
     </div>
   )
