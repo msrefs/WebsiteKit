@@ -298,26 +298,3 @@ img {
 .adsbygoogle {
   overflow: hidden;
 }
-
-/* 定义 MiSans 字体 */
-@font-face {
-  font-family: 'MiSans';
-  src: url('/webfonts/MiSans-Regular.woff2') format('woff2');
-  font-weight: 400; /* Normal */
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/webfonts/MiSans-Medium.woff2') format('woff2');
-  font-weight: 500; /* Medium */
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'MiSans';
-  src: url('/webfonts/MiSans-Bold.woff2') format('woff2');
-  font-weight: 700; /* Bold */
-  font-display: swap;
-}
