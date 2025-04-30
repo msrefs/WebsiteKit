@@ -40,7 +40,7 @@ const Hero = () => {
             rounded-t-[24px] border-b-0
           `}>
             <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
-              <div className='text-2xl font-bold mb-1 dark:text-white transition-colors duration-200'>
+              <div className='text-4xl font-bold mb-1 dark:text-white transition-colors duration-200'>
                 {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
               </div>
               <div className='text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200'>
