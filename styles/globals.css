@@ -349,32 +349,43 @@ img {
   animation: float 3s ease-in-out 1.5s infinite;
 }
 
-/* 禁用全局细字体，但排除 Font Awesome 图标 */
-body, p, span, div, a, li, h1, h2, h3, h4, h5, h6 {
-  font-weight: 400 !important; /* 普通文本设为正常粗细 */
+/* === 文本粗细控制 === */
+/* 基础文本设为400（常规） */
+body, p, span, div, a, li {
+  font-weight: 400;
 }
 
-/* 保留粗体样式 */
-b, strong {
-  font-weight: 700 !important;
+/* 保留粗体标签 */
+b, strong, .font-bold, .bold {
+  font-weight: 700 !important; /* 强制粗体 */
 }
 
-/* 确保标题保持中等/粗体 */
+/* 标题单独控制 */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600 !important;
+  font-weight: 600 !important; /* 中等粗度 */
 }
 
-/* ===== 图标保护 ===== */
+/* === 图标终极保护方案 === */
+/* 覆盖所有可能的Font Awesome类名 */
+[class*="fa-"],
+[class^="fa-"],
 .fa,
 .fas,
 .far,
 .fal,
 .fab,
-[class^="fa-"],
-[class*=" fa-"] {
+.fa-solid,
+.fa-regular,
+.fa-brands,
+.icon,
+.i {
   font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
   font-weight: normal !important;
+  font-style: normal !important;
 }
-.fas {
+
+/* 实心图标特殊处理 */
+.fas,
+.fa-solid {
   font-weight: 900 !important;
 }
