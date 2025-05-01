@@ -27,23 +27,22 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* PC端装饰元素 - 新设计 */}
+          {/* PC端装饰元素 - 基于logo风格 */}
           <div className="absolute right-0 top-0 h-full w-1/3 overflow-hidden">
-            {/* 背景光晕 */}
-            <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-64 h-64 rounded-full bg-[#4ade80] opacity-10 blur-[80px]"></div>
-            
-            {/* 主装饰元素 */}
+            {/* 主装饰元素 - 模仿logo的层叠设计 */}
             <div className="absolute right-10 top-1/2 transform -translate-y-1/2">
               <div className="relative">
-                {/* 大圆环 */}
-                <div className="w-32 h-32 rounded-full border-[12px] border-[#4ade80]/30 animate-spin-slow"></div>
-                {/* 内圆 */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-gradient-to-br from-[#4ade80] to-[#22c55e] shadow-lg"></div>
-                {/* 浮动小圆点 */}
-                <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-[#22c55e] animate-float"></div>
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-[#4ade80] animate-float-delay"></div>
+                {/* 大块绿色渐变层 - 类似logo中的主形状 */}
+                <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-6 shadow-lg"></div>
+                {/* 小块深绿色层 - 类似logo中的第二层 */}
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-6 shadow-lg"></div>
+                {/* 装饰小点 - 增强细节 */}
+                <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#00e599] shadow"></div>
               </div>
             </div>
+            
+            {/* 背景光晕 - 使用logo中的绿色 */}
+            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-[#00e599] opacity-10 blur-[80px]"></div>
           </div>
         </div>
       </div>
@@ -68,15 +67,15 @@ const Hero = () => {
               </div>
             </div>
             
-            {/* 移动端简化装饰元素 - 新设计 */}
+            {/* 移动端简化装饰元素 */}
             <div className="absolute right-0 top-0 h-full w-1/2 overflow-hidden">
-              <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-40 h-40 rounded-full bg-[#4ade80] opacity-10 blur-[60px]"></div>
               <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
                 <div className="relative">
-                  <div className="w-16 h-16 rounded-full border-8 border-[#4ade80]/20 animate-spin-slow"></div>
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gradient-to-br from-[#4ade80] to-[#22c55e] shadow"></div>
+                  <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow"></div>
+                  <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow"></div>
                 </div>
               </div>
+              <div className="absolute -right-10 top-1/4 w-40 h-40 rounded-full bg-[#00e599] opacity-10 blur-[60px]"></div>
             </div>
           </div>
           
@@ -85,8 +84,8 @@ const Hero = () => {
             target="_blank"
             className={`
               block w-full
-              bg-gradient-to-r from-[#4ade80] to-[#22c55e]
-              hover:from-[#3ad076] hover:to-[#1fb955]
+              bg-gradient-to-r from-[#00e599] to-[#00af92]
+              hover:from-[#00d18c] hover:to-[#009a80]
               text-white font-bold
               py-3 px-6 rounded-b-[24px]
               text-left
