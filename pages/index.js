@@ -14,7 +14,27 @@ import { generateRedirectJson } from '@/lib/redirect'
  */
 const Index = props => {
   const theme = siteConfig('THEME', BLOG.THEME, props.NOTION_CONFIG)
-  return <DynamicLayout theme={theme} layoutName='LayoutIndex' {...props} />
+  
+  return (
+    <>
+      {/* 
+           　  　▃▆█▇▄▖
+    　 　 　 ▟◤▖　　　◥█▎
+       　 ◢◤　 ▐　　　 　▐▉
+    　 ▗◤　　　▂　▗▖　　▕█▎
+    　◤　▗▅▖◥▄　▀◣　　█▊
+    ▐　▕▎◥▖◣◤　　　　◢██
+    █◣　◥▅█▀　　　　▐██◤
+    ▐█▙▂　　     　◢██◤
+    ◥██◣　　　　◢▄◤
+     　　▀██▅▇▀
+
+
+    114514 你是一个一个一个一个一个啊啊啊啊！！！！！
+      */}
+      <DynamicLayout theme={theme} layoutName='LayoutIndex' {...props} />
+    </>
+  )
 }
 
 /**

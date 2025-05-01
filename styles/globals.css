@@ -7,7 +7,7 @@ html {
 }
 
 #footer-bottom {
-  border-top: 1px solid #f1f3f7 !important;
+  border-top: none !important;
 }
 
 #color-transition {
@@ -319,4 +319,12 @@ img {
 
 .animate-float-delay {
   animation: float 3s ease-in-out 1.5s infinite;
+}
+
+* {
+  font-weight: 400 !important; /* 将所有细字体强制设为正常 */
+}
+
+b, strong, h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important; /* 保持粗体元素不变 */
 }

@@ -21,26 +21,6 @@ const CONFIG = {
   HEO_HERO_TITLE_1: '你好！',
   HEO_HERO_TITLE_2: '欢迎访问Neotec.',
   HEO_HERO_TITLE_3: 'WWW.NEOTEC.UK',
-  HEO_HERO_TITLE_4: '4月修复已完成',
-  HEO_HERO_TITLE_5: '该网站基于Next.js开发',
-  HEO_HERO_TITLE_LINK: '',
-  // 英雄区遮罩文字
-  HEO_HERO_COVER_TITLE: 'RANDOM JUMP',
-
-  // 英雄区显示三个置顶分类
-  HEO_HERO_CATEGORY_1: { title: 'Basic', url: '/tag/Basic' },
-  HEO_HERO_CATEGORY_2: { title: 'Referral', url: '/tag/Recommend' },
-  HEO_HERO_CATEGORY_3: { title: 'Tutorials', url: '/tag/Tutorials' },
-
-  // 英雄区右侧推荐文章标签, 例如 [推荐] , 最多六篇文章; 若留空白''，则推荐最近更新文章
-  HEO_HERO_RECOMMEND_POST_TAG: 'Recommend',
-  HEO_HERO_RECOMMEND_POST_SORT_BY_UPDATE_TIME: false, // 推荐文章排序，为`true`时将强制按最后修改时间倒序
-  //   HERO_RECOMMEND_COVER: 'https://cdn.pixabay.com/photo/2015/10/30/20/13/sunrise-1014712_1280.jpg', // 英雄区右侧图片
-
-  // 右侧个人资料卡牌欢迎语，点击可自动切换
-  HEO_INFOCARD_GREETINGS: [
-    '欢迎访问'
-  ],
 
   // 个人资料底部按钮
   HEO_INFO_CARD_URL1: '/about',
@@ -50,9 +30,6 @@ const CONFIG = {
   HEO_INFO_CARD_URL3: '/joinus',
   HEO_INFO_CARD_TEXT3: '加入我们',
 
-  // 用户技能图标
-  HEO_GROUP_ICONS: [
-  ],
 
   HEO_SOCIAL_CARD: false, // 是否显示右侧，点击加入社群按钮
   HEO_SOCIAL_CARD_TITLE_1: '交流频道',
