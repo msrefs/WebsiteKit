@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== Font Awesome 字体定义 ===== */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('/fonts/fa-solid-900.woff2') format('woff2'),
+       url('/fonts/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/fa-brands-400.woff2') format('woff2'),
+       url('/fonts/fa-brands-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('/fonts/fa-regular-400.woff2') format('woff2'),
+       url('/fonts/fa-regular-400.ttf') format('truetype');
+}
+
 html {
   overflow-x: hidden;
 }
@@ -336,13 +364,17 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
-/* 特别保护 Font Awesome 图标的字重 */
-.fa, 
-.fas, 
-.far, 
-.fal, 
+/* ===== 图标保护 ===== */
+.fa,
+.fas,
+.far,
+.fal,
 .fab,
-[class^="fa-"], 
+[class^="fa-"],
 [class*=" fa-"] {
-  font-weight: normal !important; /* 强制恢复图标的默认字重 */
+  font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
+  font-weight: normal !important;
+}
+.fas {
+  font-weight: 900 !important;
 }
