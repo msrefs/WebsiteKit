@@ -28,13 +28,24 @@ const Footer = () => {
         
         {/* Logo 部分 - 添加mt-2向下移动 */}
         <div className='mb-3 lg:mb-0 lg:mr-4 flex-shrink-0 self-start mt-2'>
-          <Image 
-            src="/logo.svg" 
-            alt="Site Logo" 
-            width={45}
-            height={45}
-            className='object-contain h-9 w-auto'
-          />
+          <div className="dark:hidden">
+            <Image 
+              src="/logo-white.svg" 
+              alt="Site Logo" 
+              width={45}
+              height={45}
+              className='object-contain h-9 w-auto'
+            />
+          </div>
+          <div className="hidden dark:block">
+            <Image 
+              src="/logo-dark.svg" 
+              alt="Site Logo" 
+              width={45}
+              height={45}
+              className='object-contain h-9 w-auto'
+            />
+          </div>
         </div>
 
         {/* 文字信息部分 */}
