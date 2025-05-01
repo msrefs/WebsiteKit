@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-4'>
-      {/* PC端 - 完整恢复 */}
+      {/* PC端 */}
       <div className='max-w-[86rem] w-full mx-auto px-5 font-bold'>
         <div 
           className={`
@@ -26,10 +26,23 @@ const Hero = () => {
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </div>
           </div>
+
+          {/* PC端装饰元素 */}
+          <div className="absolute right-0 top-0 h-full w-1/3 overflow-hidden">
+            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-20 dark:opacity-10"></div>
+            <div className="absolute right-10 top-1/2 transform -translate-y-1/2">
+              <div className="flex flex-col space-y-4">
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 rotate-12 shadow-lg dark:from-blue-600 dark:to-indigo-700"></div>
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 -rotate-12 shadow-lg dark:from-purple-600 dark:to-pink-600"></div>
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-green-400 to-teal-500 rotate-6 shadow-lg dark:from-green-500 dark:to-teal-600"></div>
+              </div>
+            </div>
+            <div className="absolute -right-10 -bottom-10 w-48 h-48 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 opacity-20 dark:opacity-10"></div>
+          </div>
         </div>
       </div>
 
-      {/* 移动端 - 保持修改后的样式 */}
+      {/* 移动端 */}
       <div className='md:hidden w-full px-5'>
         <div className='relative'>
           <div className={`
@@ -38,6 +51,7 @@ const Hero = () => {
             border dark:border-gray-700
             transition-colors duration-200
             rounded-t-[24px] border-b-0
+            relative
           `}>
             <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
               <div className='text-4xl font-bold mb-1 dark:text-white transition-colors duration-200'>
@@ -46,6 +60,18 @@ const Hero = () => {
               <div className='text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200'>
                 {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
               </div>
+            </div>
+            
+            {/* 移动端简化装饰元素 */}
+            <div className="absolute right-0 top-0 h-full w-1/2 overflow-hidden">
+              <div className="absolute -right-10 -top-10 w-32 h-32 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 opacity-15 dark:opacity-10"></div>
+              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
+                <div className="flex space-x-2">
+                  <div className="w-8 h-8 rounded bg-gradient-to-br from-blue-500 to-indigo-600 rotate-12 shadow dark:from-blue-600 dark:to-indigo-700"></div>
+                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 -rotate-12 shadow dark:from-purple-600 dark:to-pink-600"></div>
+                </div>
+              </div>
+              <div className="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 opacity-15 dark:opacity-10"></div>
             </div>
           </div>
           
