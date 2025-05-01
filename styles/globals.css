@@ -321,9 +321,9 @@ img {
   animation: float 3s ease-in-out 1.5s infinite;
 }
 
-/* 只针对文本元素禁用细字体，不影响图标 */
+/* 禁用全局细字体，但排除 Font Awesome 图标 */
 body, p, span, div, a, li, h1, h2, h3, h4, h5, h6 {
-  font-weight: 400 !important;
+  font-weight: 400 !important; /* 普通文本设为正常粗细 */
 }
 
 /* 保留粗体样式 */
@@ -336,11 +336,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600 !important;
 }
 
-/* 排除图标元素 */
-[class*="fa-"], 
-[class*="icon-"], 
-[class*="material-icons"],
-.svg-icon,
-i {
-  font-weight: normal !important;
+/* 特别保护 Font Awesome 图标的字重 */
+.fa, 
+.fas, 
+.far, 
+.fal, 
+.fab,
+[class^="fa-"], 
+[class*=" fa-"] {
+  font-weight: normal !important; /* 强制恢复图标的默认字重 */
 }
