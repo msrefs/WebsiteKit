@@ -321,10 +321,26 @@ img {
   animation: float 3s ease-in-out 1.5s infinite;
 }
 
-* {
-  font-weight: 400 !important; /* 将所有细字体强制设为正常 */
+/* 只针对文本元素禁用细字体，不影响图标 */
+body, p, span, div, a, li, h1, h2, h3, h4, h5, h6 {
+  font-weight: 400 !important;
 }
 
-b, strong, h1, h2, h3, h4, h5, h6 {
-  font-weight: 700 !important; /* 保持粗体元素不变 */
+/* 保留粗体样式 */
+b, strong {
+  font-weight: 700 !important;
+}
+
+/* 确保标题保持中等/粗体 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600 !important;
+}
+
+/* 排除图标元素 */
+[class*="fa-"], 
+[class*="icon-"], 
+[class*="material-icons"],
+.svg-icon,
+i {
+  font-weight: normal !important;
 }
