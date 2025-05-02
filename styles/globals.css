@@ -320,3 +320,8 @@ img {
 .animate-float-delay {
   animation: float 3s ease-in-out 1.5s infinite;
 }
+
+/* 更全面的排除方案 */
+body *:not(i):not(svg):not(path):not(.fa):not(.fas):not(.far):not(.fal):not(.fab) {
+  font-weight: bold !important;
+}
