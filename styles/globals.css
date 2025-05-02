@@ -2,34 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ===== Font Awesome 字体定义 ===== */
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: url('/fonts/fa-solid-900.woff2') format('woff2'),
-       url('/fonts/fa-solid-900.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Font Awesome 6 Brands';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url('/fonts/fa-brands-400.woff2') format('woff2'),
-       url('/fonts/fa-brands-400.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Font Awesome 6 Free';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url('/fonts/fa-regular-400.woff2') format('woff2'),
-       url('/fonts/fa-regular-400.ttf') format('truetype');
-}
-
 html {
   overflow-x: hidden;
 }
@@ -347,45 +319,4 @@ img {
 
 .animate-float-delay {
   animation: float 3s ease-in-out 1.5s infinite;
-}
-
-/* === 文本粗细控制 === */
-/* 基础文本设为400（常规） */
-body, p, span, div, a, li {
-  font-weight: 400;
-}
-
-/* 保留粗体标签 */
-b, strong, .font-bold, .bold {
-  font-weight: 700 !important; /* 强制粗体 */
-}
-
-/* 标题单独控制 */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600 !important; /* 中等粗度 */
-}
-
-/* === 图标终极保护方案 === */
-/* 覆盖所有可能的Font Awesome类名 */
-[class*="fa-"],
-[class^="fa-"],
-.fa,
-.fas,
-.far,
-.fal,
-.fab,
-.fa-solid,
-.fa-regular,
-.fa-brands,
-.icon,
-.i {
-  font-family: 'Font Awesome 6 Free', 'Font Awesome 6 Brands' !important;
-  font-weight: normal !important;
-  font-style: normal !important;
-}
-
-/* 实心图标特殊处理 */
-.fas,
-.fa-solid {
-  font-weight: 900 !important;
 }
