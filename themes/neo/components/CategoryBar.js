@@ -33,7 +33,7 @@ export default function CategoryBar(props) {
     <div
       id='category-bar'
       className={`wow fadeInUp flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full lg:bg-white dark:lg:bg-[#1e1e1e]  
-            ${border ? 'lg:border lg:hover:border dark:lg:border-gray-800 hover:border-Emerald-400 dark:hover:border-Emerald-400 ' : ''}  py-2 lg:px-2 rounded-[24px] transition-colors duration-200`}>
+            ${border ? 'lg:border lg:hover:border dark:lg:border-gray-800 hover:border-emerald-400 dark:hover:border-emerald-400 ' : ''}  py-2 lg:px-2 rounded-[24px] transition-colors duration-200`}>
       <div
         id='category-bar-items'
         ref={categoryBarItemsRef}
@@ -47,7 +47,7 @@ export default function CategoryBar(props) {
       <div id='category-bar-next' className='flex items-center justify-center pr-2'> {/* 添加了pr-2 */}
         <div
           id='right'
-          className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-Emerald-400 hover:text-Emerald-400'
+          className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-emerald-400 hover:text-emerald-400'
           onClick={handleToggleScroll}>
           {scrollRight ? (
             <ChevronDoubleLeft className={'w-5 h-5'} />
@@ -57,7 +57,7 @@ export default function CategoryBar(props) {
         </div>
         <Link
           href='/category'
-          className='whitespace-nowrap font-bold text-gray-900 dark:text-white transition-colors duration-200 hover:text-Emerald-400 dark:hover:text-Emerald-400'>
+          className='whitespace-nowrap font-bold text-gray-900 dark:text-white transition-colors duration-200 hover:text-emerald-400 dark:hover:text-emerald-400'>
           {locale.MENU.CATEGORY}
         </Link>
       </div>
@@ -76,7 +76,7 @@ const MenuItem = ({ href, name }) => {
   const selected = category === name
   return (
     <div
-      className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-full text-gray-900 dark:text-white hover:text-white hover:bg-Emerald-400 dark:hover:bg-Emerald-400 ${selected ? 'text-white bg-Emerald-400 dark:bg-Emerald-400' : ''}`}>
+      className={`whitespace-nowrap mr-2 duration-200 transition-all font-bold px-2 py-0.5 rounded-full text-gray-900 dark:text-white hover:text-white hover:bg-emerald-400 dark:hover:bg-emerald-400 ${selected ? 'text-white bg-emerald-400 dark:bg-emerald-400' : ''}`}>
       <Link href={href}>{name}</Link>
     </div>
   )

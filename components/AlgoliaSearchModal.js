@@ -251,14 +251,14 @@ export default function AlgoliaSearchModal({ cRef }) {
       <div
         className={`${
           isModalOpen ? 'opacity-100' : 'invisible opacity-0 translate-y-10'
-        } flex flex-col justify-between w-full min-h-[10rem] h-full md:h-fit max-w-xl dark:bg-hexo-black-gray dark:border-gray-800 bg-white dark:bg- p-5 rounded-full z-50 shadow border hover:border-Emerald-400 duration-300 transition-all `}>
+        } flex flex-col justify-between w-full min-h-[10rem] h-full md:h-fit max-w-xl dark:bg-hexo-black-gray dark:border-gray-800 bg-white dark:bg- p-5 rounded-full z-50 shadow border hover:border-emerald-400 duration-300 transition-all `}>
         <div className='flex justify-between items-center'>
-          <div className='text-2xl text-Emerald-400 dark:text-indigo-600 font-bold'>
+          <div className='text-2xl text-emerald-400 dark:text-indigo-600 font-bold'>
             搜索
           </div>
           <div>
             <i
-              className='text-gray-600 fa-solid fa-xmark p-1 cursor-pointer hover:text-Emerald-400'
+              className='text-gray-600 fa-solid fa-xmark p-1 cursor-pointer hover:text-emerald-400'
               onClick={closeModal}></i>
           </div>
         </div>
@@ -294,7 +294,7 @@ export default function AlgoliaSearchModal({ cRef }) {
               onClick={() => onJumpSearchResult(index)}
               className={`cursor-pointer replace my-2 p-2 duration-100 
               rounded-full
-              ${activeIndex === index ? 'bg-Emerald-400 dark:bg-indigo-600' : ''}`}>
+              ${activeIndex === index ? 'bg-emerald-400 dark:bg-indigo-600' : ''}`}>
               <a
                 className={`${activeIndex === index ? ' text-white' : ' text-black dark:text-gray-300 '}`}>
                 {result.title}
@@ -363,7 +363,7 @@ function TagGroups() {
             className={'cursor-pointer inline-block whitespace-nowrap'}>
             <div
               className={
-                'flex items-center text-black dark:text-gray-300 hover:bg-Emerald-400 dark:hover:bg-indigo-600 hover:scale-110 hover:text-white rounded-full px-2 py-0.5 duration-150 transition-all'
+                'flex items-center text-black dark:text-gray-300 hover:bg-emerald-400 dark:hover:bg-indigo-600 hover:scale-110 hover:text-white rounded-full px-2 py-0.5 duration-150 transition-all'
               }>
               <div className='text-lg'>{tag.name} </div>
               {tag.count ? (
@@ -393,8 +393,8 @@ function Pagination(props) {
       {Array.from({ length: totalPage }, (_, i) => {
         const classNames =
           page === i
-            ? 'font-bold text-white bg-Emerald-400 dark:bg-indigo-600 rounded'
-            : 'hover:text-Emerald-400 hover:font-bold dark:text-gray-300'
+            ? 'font-bold text-white bg-emerald-400 dark:bg-indigo-600 rounded'
+            : 'hover:text-emerald-400 hover:font-bold dark:text-gray-300'
 
         return (
           <div

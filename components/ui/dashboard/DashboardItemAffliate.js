@@ -9,7 +9,7 @@ export default function DashboardItemAffliate() {
     {
       title: '￥0.00',
       desc: '累计佣金',
-      className: 'bg-Emerald-400 hover:bg-blue-700 text-white'
+      className: 'bg-emerald-400 hover:bg-blue-700 text-white'
     },
     {
       title: '￥0.00',
@@ -132,7 +132,7 @@ export default function DashboardItemAffliate() {
               id='remember'
               type='checkbox'
               value=''
-              className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-Emerald-400 dark:ring-offset-gray-800'
+              className='w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-emerald-400 dark:ring-offset-gray-800'
               required
             />
           </div>
@@ -142,7 +142,7 @@ export default function DashboardItemAffliate() {
             我以阅读并同意{' '}
             <Link
               href='/terms-of-use'
-              className='text-Emerald-400 hover:underline dark:text-blue-500'>
+              className='text-emerald-400 hover:underline dark:text-blue-500'>
               服务协议
             </Link>
             .
@@ -151,12 +151,12 @@ export default function DashboardItemAffliate() {
         <div className='flex gap-x-2'>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-Emerald-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-emerald-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             提现RMB
           </button>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-Emerald-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-emerald-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             提现到余额
           </button>
         </div>

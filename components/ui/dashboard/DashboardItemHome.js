@@ -7,7 +7,7 @@ export default function DashboardItemHome() {
     <div className='w-full mx-auto'>
       {/* 提示消息 */}
       <div
-        className='p-4 mb-4 text-xl font-bold text-Emerald-800 rounded-full bg-Emerald-50 dark:bg-gray-800 dark:text-Emerald-400'
+        className='p-4 mb-4 text-xl font-bold text-emerald-800 rounded-full bg-emerald-50 dark:bg-gray-800 dark:text-emerald-400'
         role='alert'>
         <span className='font-medium'>注意!</span>{' '}
         整个后台都只是页面效果，仅供演示查看，没有对接实际功能。
@@ -25,7 +25,7 @@ export default function DashboardItemHome() {
         <h3 className='text-xl text-gray-800 dark:text-white'>当前任务进度</h3>
         <div className='bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 my-2'>
           <div
-            className='bg-Emerald-500 h-2.5 rounded-full'
+            className='bg-emerald-500 h-2.5 rounded-full'
             style={{ width: '75%' }}></div>
         </div>
         <p className='text-sm text-gray-500 dark:text-gray-400'>
@@ -46,11 +46,11 @@ export default function DashboardItemHome() {
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8'>
         <div className='bg-white shadow-lg p-6 rounded-full hover:scale-105 transition-all transform duration-300'>
           <h3 className='text-xl text-gray-800 dark:text-white'>今日访问量</h3>
-          <p className='text-3xl text-Emerald-600'>1,245</p>
+          <p className='text-3xl text-emerald-600'>1,245</p>
         </div>
         <div className='bg-white shadow-lg p-6 rounded-full hover:scale-105 transition-all transform duration-300'>
           <h3 className='text-xl text-gray-800 dark:text-white'>用户总数</h3>
-          <p className='text-3xl text-Emerald-400'>12,300</p>
+          <p className='text-3xl text-emerald-400'>12,300</p>
         </div>
         <div className='bg-white shadow-lg p-6 rounded-full hover:scale-105 transition-all transform duration-300'>
           <h3 className='text-xl text-gray-800 dark:text-white'>

@@ -19,9 +19,9 @@ export function NoticeBar() {
 
   return (
     <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-5 font-bold'>
-      <div className='animate__animated animate__fadeIn animate__fast group cursor-pointer bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-Emerald-400 dark:hover:border-Emerald-400 border dark:border-gray-700  duration-200 hover:shadow-md transition-all rounded-[24px] w-full h-full flex items-center justify-between px-5'>
+      <div className='animate__animated animate__fadeIn animate__fast group cursor-pointer bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-emerald-400 dark:hover:border-emerald-400 border dark:border-gray-700  duration-200 hover:shadow-md transition-all rounded-[24px] w-full h-full flex items-center justify-between px-5'>
         <span className='whitespace-nowrap'>{locale.COMMON.NOW}</span>
-        <div className='w-full h-full hover:text-Emerald-400 dark:hover:text-Emerald-400 flex justify-center items-center'>
+        <div className='w-full h-full hover:text-emerald-400 dark:hover:text-emerald-400 flex justify-center items-center'>
           <Swipe items={notices} />
         </div>
         <div>

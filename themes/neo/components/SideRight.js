@@ -52,7 +52,7 @@ export default function SideRight(props) {
         {/* 最新文章列表 */}
         <div
           className={
-            'border wow fadeInUp  hover:border-Emerald-400  dark:hover:border-Emerald-400 duration-200 dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-[24px] lg:p-6 p-4 hidden lg:block bg-white'
+            'border wow fadeInUp  hover:border-emerald-400  dark:hover:border-emerald-400 duration-200 dark:border-gray-700 dark:bg-[#1e1e1e] dark:text-white rounded-[24px] lg:p-6 p-4 hidden lg:block bg-white'
           }>
           <LatestPostsGroupMini {...props} />
         </div>
@@ -65,7 +65,7 @@ export default function SideRight(props) {
         {/* 标签和成绩 */}
         <Card
           className={
-            'bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-Emerald-400  dark:hover:border-Emerald-400 duration-200'
+            'bg-white dark:bg-[#1e1e1e] dark:text-white hover:border-emerald-400  dark:hover:border-emerald-400 duration-200'
           }>
           <TagGroups tags={sortedTags} currentTag={currentTag} />
           <hr className='mx-1 flex border-dashed relative my-4' />

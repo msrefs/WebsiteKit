@@ -57,7 +57,7 @@ const PaginationNumber = ({ page, totalPage }) => {
           }}
           rel='prev'
           className={`${currentPage === 1 ? 'invisible' : 'block'}`}>
-          <div className='hover:border-Emerald-400 dark:hover:border-Emerald-400 relative w-24 h-10 flex items-center transition-all duration-200 justify-center py-2 px-2 bg-white dark:bg-[#1e1e1e] border dark:border-gray-600 rounded-full cursor-pointer group'>
+          <div className='hover:border-emerald-400 dark:hover:border-emerald-400 relative w-24 h-10 flex items-center transition-all duration-200 justify-center py-2 px-2 bg-white dark:bg-[#1e1e1e] border dark:border-gray-600 rounded-full cursor-pointer group'>
             <i className='fas fa-angle-left mr-2 transition-all duration-200 transform group-hover:-translate-x-4' />
             <div className='absolute translate-x-4 ml-2 opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:translate-x-0'>
               {locale.PAGINATION.PREV}
@@ -70,14 +70,14 @@ const PaginationNumber = ({ page, totalPage }) => {
           {pages}
 
           {/* 跳转页码 */}
-          <div className='bg-white hover:bg-gray-100 dark:hover:bg-Emerald-400  dark:bg-[#1e1e1e]  h-10 border dark:border-gray-600 flex justify-center items-center rounded-full group hover:border-Emerald-400 transition-all duration-200'>
+          <div className='bg-white hover:bg-gray-100 dark:hover:bg-emerald-400  dark:bg-[#1e1e1e]  h-10 border dark:border-gray-600 flex justify-center items-center rounded-full group hover:border-emerald-400 transition-all duration-200'>
             <input
               value={value}
               className='w-0 group-hover:w-20 group-hover:px-3 transition-all duration-200 bg-gray-100 border-none outline-none h-full rounded-full'
               onInput={handleInputChange}></input>
             <div
               onClick={jumpToPage}
-              className='cursor-pointer hover:bg-Emerald-400  dark:bg-[#1e1e1e] dark:hover:bg-Emerald-400 hover:text-white px-4 py-2 group-hover:px-2 group-hover:mx-1 group-hover:rounded bg-white'>
+              className='cursor-pointer hover:bg-emerald-400  dark:bg-[#1e1e1e] dark:hover:bg-emerald-400 hover:text-white px-4 py-2 group-hover:px-2 group-hover:mx-1 group-hover:rounded bg-white'>
               <ChevronDoubleRight className={'w-4 h-4'} />
             </div>
           </div>
@@ -91,7 +91,7 @@ const PaginationNumber = ({ page, totalPage }) => {
           }}
           rel='next'
           className={`${+showNext ? 'block' : 'invisible'} `}>
-          <div className='hover:border-Emerald-400 dark:hover:border-Emerald-400 relative w-24 h-10 flex items-center transition-all duration-200 justify-center py-2 px-2 bg-white dark:bg-[#1e1e1e] border dark:border-gray-600 rounded-full cursor-pointer group'>
+          <div className='hover:border-emerald-400 dark:hover:border-emerald-400 relative w-24 h-10 flex items-center transition-all duration-200 justify-center py-2 px-2 bg-white dark:bg-[#1e1e1e] border dark:border-gray-600 rounded-full cursor-pointer group'>
             <i className='fas fa-angle-right mr-2 transition-all duration-200 transform group-hover:translate-x-6' />
             <div className='absolute -translate-x-10 ml-2 opacity-0 transition-all duration-200 group-hover:opacity-100 group-hover:-translate-x-2'>
               {locale.PAGINATION.NEXT}
@@ -153,9 +153,9 @@ function getPageElement(page, currentPage, pagePrefix) {
       passHref
       className={
         (selected
-          ? 'bg-Emerald-400 dark:bg-Emerald-400 text-white '
+          ? 'bg-emerald-400 dark:bg-emerald-400 text-white '
           : 'dark:bg-[#1e1e1e] bg-white') +
-        ' hover:border-Emerald-400 dark:hover:bg-Emerald-400 dark:border-gray-600 px-4 border py-2 rounded-full drop-shadow-sm duration-200 transition-colors'
+        ' hover:border-emerald-400 dark:hover:bg-emerald-400 dark:border-gray-600 px-4 border py-2 rounded-full drop-shadow-sm duration-200 transition-colors'
       }>
       {page}
     </Link>
