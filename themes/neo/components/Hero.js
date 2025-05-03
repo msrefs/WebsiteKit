@@ -1,102 +1,120 @@
 import { siteConfig } from '@/lib/config'
 import CONFIG from '../config'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
+  // 动画变量
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 10
+      }
+    }
+  }
+
   return (
-    <div className='w-full select-none mb-4'>
-      {/* PC端 */}
-      <div className='max-w-[86rem] w-full mx-auto px-5 font-bold'>
-        <div 
+    <div className='w-full select-none mb-8'>
+      {/* 桌面端版本 */}
+      <div className='max-w-[86rem] w-full mx-auto px-5'>
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={containerVariants}
           className={`
-            animate__animated animate__fadeIn animate__fast
-            rounded-[24px] w-full hidden md:block h-64 
-            bg-white dark:bg-[#1e1e1e] 
-            border dark:border-gray-700 
-            relative overflow-hidden mb-4
-            transition-colors duration-200
+            rounded-3xl w-full hidden md:block h-80
+            bg-gradient-to-br from-white to-gray-50 dark:from-[#1a1a1a] dark:to-[#2a2a2a]
+            border border-gray-200 dark:border-gray-700
+            relative overflow-hidden mb-6
+            shadow-lg hover:shadow-xl transition-shadow duration-300
           `}>
-          <div className='z-10 flex flex-col absolute top-10 left-10'>
-            <div className='text-4xl font-bold mb-3 dark:text-white transition-colors duration-200'>
+          <motion.div 
+            variants={itemVariants}
+            className='z-10 flex flex-col absolute top-12 left-12 max-w-lg'>
+            <h1 className='text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
               <br />
-              {siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}
-            </div>
-            <div className='text-xs text-gray-600 dark:text-gray-200 transition-colors duration-200'>
+              <span className='text-4xl'>{siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}</span>
+            </h1>
+            <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-            </div>
-          </div>
+            </p>
+          </motion.div>
 
-          {/* PC端装饰元素 - 基于logo风格 */}
-          <div className="absolute right-0 top-0 h-full w-1/3 overflow-hidden">
-            {/* 主装饰元素 - 模仿logo的层叠设计 */}
-            <div className="absolute right-10 top-1/2 transform -translate-y-1/2">
+          {/* 桌面端装饰元素 */}
+          <div className="absolute right-0 top-0 h-full w-2/5 overflow-hidden">
+            <motion.div 
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.4, type: "spring" }}
+              className="absolute right-12 top-1/2 transform -translate-y-1/2">
               <div className="relative">
-                {/* 大块绿色渐变层 - 类似logo中的主形状 */}
-                <div className="w-32 h-32 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-6 shadow-lg"></div>
-                {/* 小块深绿色层 - 类似logo中的第二层 */}
-                <div className="absolute -bottom-4 -right-4 w-20 h-20 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-6 shadow-lg"></div>
-                {/* 装饰小点 - 增强细节 */}
-                <div className="absolute -top-2 -left-2 w-6 h-6 rounded-full bg-[#00e599] shadow"></div>
+                {/* 主装饰元素 */}
+                <div className="w-36 h-36 rounded-xl bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-6 shadow-2xl"></div>
+                <div className="absolute -bottom-5 -right-5 w-24 h-24 rounded-xl bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-6 shadow-xl"></div>
+                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#00e599] shadow-md animate-pulse"></div>
               </div>
-            </div>
+            </motion.div>
             
-            {/* 背景光晕 - 使用logo中的绿色 */}
-            <div className="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-[#00e599] opacity-10 blur-[80px]"></div>
+            {/* 背景光晕 */}
+            <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-[#00e599] opacity-10 blur-[100px]"></div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {/* 移动端 */}
-      <div className='md:hidden w-full px-5'>
-        <div className='relative'>
-          <div className={`
-            w-full h-48 overflow-hidden
-            bg-white dark:bg-[#1e1e1e]
-            border dark:border-gray-700
-            transition-colors duration-200
-            rounded-t-[24px] border-b-0
+      {/* 移动端版本 */}
+      <div className='md:hidden w-full px-4'>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className={`
+            w-full h-56 overflow-hidden
+            bg-gradient-to-br from-white to-gray-50 dark:from-[#1a1a1a] dark:to-[#2a2a2a]
+            border border-gray-200 dark:border-gray-700
+            rounded-3xl
             relative
+            shadow-md hover:shadow-lg transition-shadow duration-300
           `}>
-            <div className='z-10 flex flex-col absolute top-6 left-6 right-6'>
-              <div className='text-4xl font-bold mb-1 dark:text-white transition-colors duration-200'>
-                {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
-              </div>
-              <div className='text-sm text-gray-600 dark:text-gray-300 transition-colors duration-200'>
-                {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-              </div>
-            </div>
-            
-            {/* 移动端简化装饰元素 */}
-            <div className="absolute right-0 top-0 h-full w-1/2 overflow-hidden">
-              <div className="absolute right-4 top-1/2 transform -translate-y-1/2">
-                <div className="relative">
-                  <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow"></div>
-                  <div className="absolute -bottom-2 -right-2 w-12 h-12 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow"></div>
-                </div>
-              </div>
-              <div className="absolute -right-10 top-1/4 w-40 h-40 rounded-full bg-[#00e599] opacity-10 blur-[60px]"></div>
-            </div>
+          <div className='z-10 flex flex-col absolute top-8 left-6 right-6'>
+            <h1 className='text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+            </h1>
+            <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </p>
           </div>
           
-          <Link 
-            href="https://status.neotec.uk/" 
-            target="_blank"
-            className={`
-              block w-full
-              bg-gradient-to-r from-[#00e599] to-[#00af92]
-              hover:from-[#00d18c] hover:to-[#009a80]
-              text-white font-bold
-              py-3 px-6 rounded-b-[24px]
-              text-left
-              transition-all duration-200
-              shadow-md
-              border-t-0
-            `}
-          >
-            查看服务状态
-          </Link>
-        </div>
+          {/* 移动端装饰元素 */}
+          <div className="absolute right-0 top-0 h-full w-1/2 overflow-hidden">
+            <motion.div 
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.3 }}
+              className="absolute right-6 top-1/2 transform -translate-y-1/2">
+              <div className="relative">
+                <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow-xl"></div>
+                <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow-lg"></div>
+              </div>
+            </motion.div>
+            <div className="absolute -right-12 top-1/4 w-48 h-48 rounded-full bg-[#00e599] opacity-10 blur-[70px]"></div>
+          </div>
+        </motion.div>
       </div>
     </div>
   )
