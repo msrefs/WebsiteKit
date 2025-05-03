@@ -1,4 +1,3 @@
-import LazyImage from '@/components/LazyImage'
 import Link from 'next/link'
 
 /**
@@ -17,10 +16,6 @@ const LatestPostsGroup = ({ latestPosts, siteInfo }) => {
   return (
     <div className='grid grid-cols-2 gap-4'>
       {latestPosts.map(post => {
-        const headerImage = post?.pageCoverThumbnail
-          ? post.pageCoverThumbnail
-          : siteInfo?.pageCover
-
         return (
           <Link
             key={post.id}
@@ -28,12 +23,6 @@ const LatestPostsGroup = ({ latestPosts, siteInfo }) => {
             title={post.title}
             href={post?.href}
             className={'my-3 flex flex-col w-full'}>
-            <div className='w-full h-24 md:h-60 overflow-hidden relative rounded-full mb-2'>
-              <LazyImage
-                src={`${headerImage}`}
-                className='object-cover w-full h-full'
-              />
-            </div>
 
             <div
               className={

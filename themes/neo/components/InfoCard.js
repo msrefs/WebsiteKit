@@ -18,7 +18,7 @@ export function InfoCard(props) {
         {/* 社交按钮1 - 方形按钮 */}
         {url1 && (
           <Link href={url1} target="_blank" rel="noopener noreferrer" className='flex-none'>
-            <div className='w-12 h-12 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg'>
+            <div className='w-12 h-12 bg-Emerald-400 hover:bg-Emerald-500 text-white flex items-center justify-center transition-all duration-300 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg'>
               <i className={`${icon1} text-white text-lg`} />
             </div>
           </Link>
@@ -27,7 +27,7 @@ export function InfoCard(props) {
         {/* 社交按钮2 - 方形按钮 */}
         {url2 && (
           <Link href={url2} target="_blank" rel="noopener noreferrer" className='flex-none'>
-            <div className='w-12 h-12 bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg'>
+            <div className='w-12 h-12 bg-Emerald-400 hover:bg-Emerald-500 text-white flex items-center justify-center transition-all duration-300 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg'>
               <i className={`${icon2} text-white text-lg`} />
             </div>
           </Link>
@@ -36,7 +36,7 @@ export function InfoCard(props) {
         {/* 了解更多按钮 - 长方形按钮(相同高度) */}
         {url3 && (
           <Link href={url3} className='flex-1 min-w-0 h-12'>
-            <div className='w-full h-full bg-green-400 hover:bg-green-500 text-white flex items-center justify-center transition-all duration-300 px-4 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg whitespace-nowrap'>
+            <div className='w-full h-full bg-Emerald-400 hover:bg-Emerald-500 text-white flex items-center justify-center transition-all duration-300 px-4 rounded-full hover:scale-[1.02] shadow-md hover:shadow-lg whitespace-nowrap'>
               <ArrowRightCircle className='w-5 h-5 mr-2' />
               {text3 && <span className='font-medium text-sm truncate'>{text3}</span>}
             </div>

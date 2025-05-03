@@ -39,7 +39,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
               <div
                 key={post.id}
                 className={
-                  'cursor-pointer flex flex-row mb-4 h-24 md:flex-row group w-full  dark:border-gray-600 hover:border-green-400  dark:hover:border-green-400 duration-300 transition-colors justify-between overflow-hidden'
+                  'cursor-pointer flex flex-row mb-4 h-24 md:flex-row group w-full  dark:border-gray-600 hover:border-Emerald-400  dark:hover:border-Emerald-400 duration-300 transition-colors justify-between overflow-hidden'
                 }>
                 {/* 图片封面 */}
                 {showPageCover && (
@@ -63,7 +63,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                         <Link
                           passHref
                           href={`/category/${post.category}`}
-                          className='cursor-pointer text-xs font-normal menu-link hover:text-green-400  dark:text-gray-600 transform'>
+                          className='cursor-pointer text-xs font-normal menu-link hover:text-Emerald-400  dark:text-gray-600 transform'>
                           {post.category}
                         </Link>
                       </div>
@@ -74,7 +74,7 @@ const BlogPostArchive = ({ posts = [], archiveTitle, siteInfo }) => {
                       href={post?.href}
                       passHref
                       className={
-                        ' group-hover:text-green-400 group-hover:dark:text-green-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
+                        ' group-hover:text-Emerald-400 group-hover:dark:text-Emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
                       }>
                       <span className='menu-link '>{post.title}</span>
                     </Link>

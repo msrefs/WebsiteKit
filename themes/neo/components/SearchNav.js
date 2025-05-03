@@ -37,7 +37,7 @@ export default function SearchNav(props) {
                           legacyBehavior>
                           <div
                               className={
-                                  ' duration-300 dark:hover:text-white dark:text-gray-200 rounded-[24px] px-3 cursor-pointer py-1 hover:bg-green-400 dark:hover:bg-green-400 hover:text-white'
+                                  ' duration-300 dark:hover:text-white dark:text-gray-200 rounded-[24px] px-3 cursor-pointer py-1 hover:bg-Emerald-400 dark:hover:bg-Emerald-400 hover:text-white'
                               }
                           >
                               <i className="mr-4 fas fa-folder" />

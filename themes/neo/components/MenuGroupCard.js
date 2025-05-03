@@ -44,7 +44,7 @@ const MenuGroupCard = props => {
                 href={link.href}
                 target={link?.target}
                 className={
-                  'w-full flex items-center justify-between py-1 hover:scale-105 duration-200 transform dark:hover:text-green-400 hover:text-green-400 px-2 cursor-pointer'
+                  'w-full flex items-center justify-between py-1 hover:scale-105 duration-200 transform dark:hover:text-Emerald-400 hover:text-Emerald-400 px-2 cursor-pointer'
                 }>
                 <>
                   <div>{link.name} :</div>

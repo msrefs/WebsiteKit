@@ -316,7 +316,7 @@ const ShareButtons = ({ post }) => {
             return (
               <button
                 key={singleService}
-                className='cursor-pointer bg-green-400 text-white rounded-full mx-1'>
+                className='cursor-pointer bg-Emerald-400 text-white rounded-full mx-1'>
                 <a
                   target='_blank'
                   rel='noreferrer'
@@ -333,7 +333,7 @@ const ShareButtons = ({ post }) => {
                 onMouseLeave={closePopover}
                 aria-label={singleService}
                 key={singleService}
-                className='cursor-pointer bg-green-600 text-white rounded-full mx-1'>
+                className='cursor-pointer bg-Emerald-600 text-white rounded-full mx-1'>
                 <div id='wechat-button'>
                   <i className='fab fa-weixin w-8' />
                 </div>

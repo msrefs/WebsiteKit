@@ -1,7 +1,5 @@
-import LazyImage from '@/components/LazyImage'
 import { siteConfig } from '@/lib/config'
 import { useGlobal } from '@/lib/global'
-// import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -28,9 +26,6 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
       {latestPosts.map(post => {
         const selected =
           currentPath === `${SUB_PATH}/${post.slug}`
-        const headerImage = post?.pageCoverThumbnail
-          ? post.pageCoverThumbnail
-          : siteInfo?.pageCover
 
         return (
           <Link
@@ -39,12 +34,6 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
             href={post?.href}
             passHref
             className={'my-3 flex'}>
-            <div className='w-20 h-14 overflow-hidden relative'>
-              <LazyImage
-                src={`${headerImage}`}
-                className='object-cover w-full h-full rounded-full'
-              />
-            </div>
             <div
               className={
                 (selected ? ' text-green-400 ' : 'dark:text-gray-200') +

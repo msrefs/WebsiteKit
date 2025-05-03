@@ -12,7 +12,7 @@ export default function DashboardItemBalance() {
     {
       title: '0 积分',
       desc: '当前余额',
-      className: 'bg-green-400 hover:bg-blue-700 text-white'
+      className: 'bg-Emerald-400 hover:bg-blue-700 text-white'
     },
     {
       title: '0 积分',
@@ -119,7 +119,7 @@ export default function DashboardItemBalance() {
           </div>
           <button
             type='submit'
-            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
+            className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-Emerald-400 dark:hover:bg-blue-700 dark:focus:ring-blue-800'>
             在线充值
           </button>
         </div>
