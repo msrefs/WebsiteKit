@@ -36,9 +36,9 @@ export default function LatestPostsGroupMini({ latestPosts, siteInfo }) {
             className={'my-3 flex'}>
             <div
               className={
-                (selected ? ' text-green-400 ' : 'dark:text-gray-200') +
-                ' text-sm overflow-x-hidden hover:text-green-400 px-2 duration-200 w-full rounded ' +
-                ' hover:text-green-400 dark:hover:text-green-400 cursor-pointer items-center flex'
+                (selected ? ' text-emerald-400 ' : 'dark:text-gray-200') +
+                ' text-sm overflow-x-hidden hover:text-emerald-400 px-2 duration-200 w-full rounded ' +
+                ' hover:text-emerald-400 dark:hover:text-emerald-400 cursor-pointer items-center flex'
               }>
               <div>
                 <div className='line-clamp-2 menu-link'>{post.title}</div>
