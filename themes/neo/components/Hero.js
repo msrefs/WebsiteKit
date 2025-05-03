@@ -4,7 +4,7 @@ import CONFIG from '../config'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-8'>
-      {/* 桌面端版本 */}
+      {/* 桌面端版本 - 保持不变 */}
       <div className='max-w-[86rem] w-full mx-auto px-5'>
         <div className={`
           rounded-3xl w-full hidden md:block h-80
@@ -13,22 +13,19 @@ const Hero = () => {
           relative overflow-hidden mb-6
           shadow-lg hover:shadow-xl transition-shadow duration-300
         `}>
-          {/* 内容区域 - 添加渐变遮罩使过渡更自然 */}
+          {/* 内容区域 */}
           <div className='z-20 flex flex-col absolute top-12 left-12 max-w-lg animate-slide-up'>
-            <div className='relative'>
-              <div className='absolute -right-20 -top-10 -bottom-10 w-40 bg-gradient-to-r from-white/80 to-transparent dark:from-[#1a1a1a]/80 pointer-events-none'></div>
-              <h1 className='text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300 relative'>
-                {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
-                <br />
-                <span className='text-4xl'>{siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}</span>
-              </h1>
-              <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative'>
-                {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-              </p>
-            </div>
+            <h1 className='text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+              <br />
+              <span className='text-4xl'>{siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}</span>
+            </h1>
+            <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </p>
           </div>
 
-          {/* 桌面端装饰元素 - 扩大光晕范围 */}
+          {/* 桌面端装饰元素 */}
           <div className="absolute right-0 top-0 h-full w-2/5 overflow-hidden">
             <div className="absolute right-12 top-1/2 transform -translate-y-1/2">
               <div className="relative animate-scale-in" style={{ animationDelay: '0.3s' }}>
@@ -37,14 +34,12 @@ const Hero = () => {
                 <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#00e599] shadow-md animate-pulse"></div>
               </div>
             </div>
-            {/* 扩大光晕并降低对比度 */}
-            <div className="absolute -right-32 -top-32 w-96 h-96 rounded-full bg-gradient-to-br from-[#00e599] to-[#00af92] opacity-[8%] blur-[100px] animate-fade-in" 
-                 style={{ animationDelay: '0.4s' }}></div>
+            <div className="absolute -right-24 -top-24 w-72 h-72 rounded-full bg-[#00e599] opacity-10 blur-[100px] animate-fade-in" style={{ animationDelay: '0.4s' }}></div>
           </div>
         </div>
       </div>
 
-      {/* 移动端版本 - 同样优化过渡效果 */}
+      {/* 移动端版本 - 重点修复部分 */}
       <div className='md:hidden w-full px-4'>
         <div className={`
           w-full h-56 overflow-hidden
@@ -55,29 +50,31 @@ const Hero = () => {
           shadow-md hover:shadow-lg transition-shadow duration-300
           animate-fade-in-up
         `}>
+          {/* 内容区域 - 添加背景渐变层 */}
+          <div className='absolute inset-0 bg-gradient-to-r from-white/70 via-white/30 to-transparent dark:from-[#1a1a1a]/70 dark:via-[#1a1a1a]/30 pointer-events-none'></div>
+          
           <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
-            <div className='relative'>
-              <div className='absolute -right-16 -top-6 -bottom-6 w-32 bg-gradient-to-r from-white/80 to-transparent dark:from-[#1a1a1a]/80 pointer-events-none'></div>
-              <h1 className='text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300 relative'>
-                {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
-              </h1>
-              <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed relative'>
-                {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-              </p>
-            </div>
+            <h1 className='text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+            </h1>
+            <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </p>
           </div>
           
-          {/* 移动端装饰元素 */}
-          <div className="absolute right-0 top-0 h-full w-1/2 overflow-hidden">
+          {/* 移动端装饰元素 - 调整光晕位置和大小 */}
+          <div className="absolute right-0 top-0 h-full w-full overflow-hidden">
             <div className="absolute right-6 top-1/2 transform -translate-y-1/2">
               <div className="relative animate-scale-in" style={{ animationDelay: '0.2s' }}>
-                <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow-xl"></div>
-                <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow-lg"></div>
+                <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00e599]/80 to-[#00af92]/80 rotate-3 shadow-xl"></div>
+                <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-lg bg-gradient-to-br from-[#00af92]/80 to-[#007a6e]/80 -rotate-3 shadow-lg"></div>
               </div>
             </div>
-            {/* 移动端光晕优化 */}
-            <div className="absolute -right-16 top-1/4 w-64 h-64 rounded-full bg-gradient-to-br from-[#00e599] to-[#00af92] opacity-[8%] blur-[70px] animate-fade-in" 
-                 style={{ animationDelay: '0.3s' }}></div>
+            {/* 调整光晕使其更柔和且覆盖整个右侧 */}
+            <div className="absolute right-0 top-0 w-full h-full">
+              <div className="absolute -right-1/4 -top-1/4 w-[150%] h-[150%] rounded-full bg-gradient-to-r from-transparent via-[#00e599]/5 to-[#00e599]/10 blur-[60px] animate-fade-in" 
+                   style={{ animationDelay: '0.3s' }}></div>
+            </div>
           </div>
         </div>
       </div>
