@@ -28,48 +28,41 @@ export default function CategoryBar(props) {
   }
 
   return (
-    <div className="max-w-[86rem] w-full mx-auto px-4 md:px-5">
+    <div
+      id='category-bar'
+      className={`wow fadeInUp flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full md:max-w-none max-w-[86rem] mx-auto px-4 md:px-5 bg-white dark:bg-[#1e1e1e]  
+            ${border ? 'border border-gray-200 dark:border-gray-700' : ''} py-2 px-2 rounded-[24px] shadow-md hover:shadow-lg transition-shadow duration-300`}>
       <div
-        id='category-bar'
-        className={`wow fadeInUp flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full bg-white dark:bg-[#1e1e1e]  
-              ${border ? 'border border-gray-200 dark:border-gray-700' : ''} py-2 px-2 rounded-[24px] shadow-md hover:shadow-lg transition-shadow duration-300`}>
-        <div
-          id='category-bar-items'
-          ref={categoryBarItemsRef}
-          className='scroll-smooth max-w-4xl rounded-full scroll-hidden flex justify-start flex-nowrap items-center overflow-x-scroll'>
-          <MenuItem href='/' name={locale.NAV.INDEX} />
-          {categoryOptions?.map((c, index) => (
-            <MenuItem key={index} href={`/category/${c.name}`} name={c.name} />
-          ))}
-        </div>
+        id='category-bar-items'
+        ref={categoryBarItemsRef}
+        className='scroll-smooth max-w-4xl rounded-full scroll-hidden flex justify-start flex-nowrap items-center overflow-x-scroll'>
+        <MenuItem href='/' name={locale.NAV.INDEX} />
+        {categoryOptions?.map((c, index) => (
+          <MenuItem key={index} href={`/category/${c.name}`} name={c.name} />
+        ))}
+      </div>
 
-        <div id='category-bar-next' className='flex items-center justify-center pr-2'>
-          <div
-            id='right'
-            className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-emerald-400 hover:text-emerald-400'
-            onClick={handleToggleScroll}>
-            {scrollRight ? (
-              <ChevronDoubleLeft className={'w-5 h-5'} />
-            ) : (
-              <ChevronDoubleRight className={'w-5 h-5'} />
-            )}
-          </div>
-          <Link
-            href='/category'
-            className='whitespace-nowrap font-bold text-gray-900 dark:text-white transition-colors duration-200 hover:text-emerald-400 dark:hover:text-emerald-400'>
-            {locale.MENU.CATEGORY}
-          </Link>
+      <div id='category-bar-next' className='flex items-center justify-center pr-2'>
+        <div
+          id='right'
+          className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-emerald-400 hover:text-emerald-400'
+          onClick={handleToggleScroll}>
+          {scrollRight ? (
+            <ChevronDoubleLeft className={'w-5 h-5'} />
+          ) : (
+            <ChevronDoubleRight className={'w-5 h-5'} />
+          )}
         </div>
+        <Link
+          href='/category'
+          className='whitespace-nowrap font-bold text-gray-900 dark:text-white transition-colors duration-200 hover:text-emerald-400 dark:hover:text-emerald-400'>
+          {locale.MENU.CATEGORY}
+        </Link>
       </div>
     </div>
   )
 }
 
-/**
- * 按钮
- * @param {*} param0
- * @returns
- */
 const MenuItem = ({ href, name }) => {
   const router = useRouter()
   const { category } = router.query
