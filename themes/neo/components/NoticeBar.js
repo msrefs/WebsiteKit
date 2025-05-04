@@ -18,7 +18,7 @@ export function NoticeBar() {
   }
 
   return (
-    <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-5 font-bold'>
+    <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-4 md:px-5 font-bold'>
       <div className='
         animate__animated animate__fadeIn animate__fast 
         group cursor-pointer 
@@ -28,11 +28,11 @@ export function NoticeBar() {
         rounded-[24px] w-full h-full flex items-center justify-between px-5
         shadow-md
       '>
-        <span className='whitespace-nowrap'>{locale.COMMON.NOW}</span>
-        <div className='w-full h-full flex justify-center items-center'>
+        <span className='whitespace-nowrap text-gray-800 dark:text-gray-200'>{locale.COMMON.NOW}</span>
+        <div className='w-full h-full flex justify-center items-center text-gray-700 dark:text-gray-300'>
           <Swipe items={notices} />
         </div>
-        <div>
+        <div className='text-gray-600 dark:text-gray-400'>
           <ArrowRightCircle className='w-5 h-5' />
         </div>
       </div>

@@ -52,51 +52,46 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 移动端版本 - 美化优化 */}
+      {/* 移动端版本 - 优化后的光晕效果 */}
       <div className='md:hidden w-full px-4'>
         <div className={`
-          w-full h-64 overflow-hidden
+          w-full h-56 overflow-hidden
           bg-gradient-to-br from-white to-gray-50 dark:from-[#1a1a1a] dark:to-[#2a2a2a]
           border border-gray-200 dark:border-gray-700
           rounded-3xl
           relative
-          shadow-lg hover:shadow-xl transition-shadow duration-300
+          shadow-md hover:shadow-lg transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          
-          {/* 优化的背景光晕 - 更柔和自然 */}
+          {/* 优化后的背景光晕 - 减少模糊度和复杂度 */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="
-              absolute -right-1/3 -top-1/4 w-[160%] h-[160%]
+              absolute -right-1/4 -top-1/4 w-[150%] h-[150%]
               bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-              from-transparent via-[#00e599]/15 to-[#00e599]/25
-              blur-[80px]
+              from-transparent via-[#00e599]/10 to-[#00e599]/15
+              blur-[60px]
               transform-gpu
               will-change-transform
             "></div>
           </div>
 
-          {/* 内容遮罩 - 增强对比度 */}
-          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-white/50 to-transparent dark:from-[#1a1a1a]/90 dark:via-[#1a1a1a]/50 pointer-events-none"></div>
+          {/* 内容遮罩 */}
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/30 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/30 pointer-events-none"></div>
 
-          {/* 移动端内容区域 - 重新布局 */}
-          <div className='z-20 flex flex-col absolute top-6 left-6 right-6 bottom-6 justify-between'>
-            <div>
-              <h1 className='text-3xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
-                {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
-              </h1>
-              <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed'>
-                {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
-              </p>
-            </div>
-            
-            {/* 移动端装饰元素 - 重新设计 */}
-            <div className="flex justify-end">
-              <div className="relative">
-                <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow-lg"></div>
-                <div className="absolute -bottom-2 -right-2 w-14 h-14 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow-md"></div>
-                <div className="absolute -top-1 -left-1 w-6 h-6 rounded-full bg-[#00e599] shadow-sm animate-pulse"></div>
-              </div>
+          <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
+            <h1 className='text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
+              {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
+            </h1>
+            <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
+            </p>
+          </div>
+          
+          {/* 移动端装饰元素 */}
+          <div className="absolute right-6 top-1/2 transform -translate-y-1/2 z-10">
+            <div className="relative">
+              <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-3 shadow-xl"></div>
+              <div className="absolute -bottom-3 -right-3 w-16 h-16 rounded-lg bg-gradient-to-br from-[#00af92] to-[#007a6e] -rotate-3 shadow-lg"></div>
             </div>
           </div>
         </div>
