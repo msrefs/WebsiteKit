@@ -28,13 +28,13 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
   )
 
   return (
-    <article>
+    <article className='max-w-[86rem] w-full mx-auto px-4 md:px-5'>
       <div
         data-wow-delay='.2s'
         className={
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
           ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
-        }>
+        }>        
         {/* 图片封面 */}
         {showPageCover && (
           <Link href={post?.href} passHref legacyBehavior>

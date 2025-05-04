@@ -4,7 +4,7 @@ import CONFIG from '../config'
 const Hero = () => {
   return (
     <div className='w-full select-none mb-8 relative z-0'>
-      {/* PC端版本 - 全面优化 */}
+      {/* PC端版本 - 保持不变 */}
       <div className='max-w-[86rem] w-full mx-auto px-5'>
         <div className={`
           rounded-3xl w-full hidden md:block h-80
@@ -14,7 +14,6 @@ const Hero = () => {
           shadow-lg hover:shadow-xl transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          {/* 修复后的背景光晕层 - 使用 transform 和 will-change 优化 */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="
               absolute -right-1/4 -top-1/4 w-[150%] h-[150%] 
@@ -26,10 +25,8 @@ const Hero = () => {
             "></div>
           </div>
 
-          {/* 内容渐变遮罩 - 确保文字可读性 */}
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
 
-          {/* 内容区域 */}
           <div className='z-20 flex flex-col absolute top-12 left-12 max-w-lg'>
             <h1 className='text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
@@ -41,7 +38,6 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* 装饰元素 */}
           <div className="absolute right-12 top-1/2 transform -translate-y-1/2 z-10">
             <div className="relative">
               <div className="w-36 h-36 rounded-xl bg-gradient-to-br from-[#00e599] to-[#00af92] rotate-6 shadow-2xl"></div>
@@ -52,32 +48,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 移动端版本 - 优化后的光晕效果 */}
+      {/* 移动端版本 - 简化版 */}
       <div className='md:hidden w-full px-4'>
         <div className={`
           w-full h-56 overflow-hidden
-          bg-gradient-to-br from-white to-gray-50 dark:from-[#1a1a1a] dark:to-[#2a2a2a]
+          bg-[#FFFFFF] dark:bg-[#1e1e1e]
           border border-gray-200 dark:border-gray-700
           rounded-3xl
           relative
           shadow-md hover:shadow-lg transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          {/* 优化后的背景光晕 - 减少模糊度和复杂度 */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="
-              absolute -right-1/4 -top-1/4 w-[150%] h-[150%]
-              bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-              from-transparent via-[#00e599]/10 to-[#00e599]/15
-              blur-[60px]
-              transform-gpu
-              will-change-transform
-            "></div>
-          </div>
-
-          {/* 内容遮罩 */}
-          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/30 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/30 pointer-events-none"></div>
-
           <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
             <h1 className='text-4xl font-extrabold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
