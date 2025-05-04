@@ -18,7 +18,7 @@ export function NoticeBar() {
   }
 
   return (
-    <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-4 md:px-5 font-bold'>
+    <div className='max-w-[86rem] w-full mx-auto flex h-12 mb-4 px-5 md:px-5 font-bold'>
       <div className='
         animate__animated animate__fadeIn animate__fast 
         group cursor-pointer 

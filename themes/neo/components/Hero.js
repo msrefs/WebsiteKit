@@ -49,7 +49,7 @@ const Hero = () => {
       </div>
 
       {/* 移动端版本 - 简化版 */}
-      <div className='md:hidden w-full px-4'>
+      <div className='md:hidden w-full px-5'>
         <div className={`
           w-full h-56 overflow-hidden
           bg-[#FFFFFF] dark:bg-[#1e1e1e]
