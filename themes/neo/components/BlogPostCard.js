@@ -28,13 +28,12 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
   )
 
   return (
-    <article
-      className={`${COVER_HOVER_ENLARGE ? '' : ''}`}> {/* 移除悬停过渡类 */}
+    <article>
       <div
         data-wow-delay='.2s'
         className={
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
-          ' wow fadeInUp border bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full dark:border-gray-600 hover:border-emerald-400  dark:hover:border-emerald-400 duration-300 justify-between overflow-hidden rounded-[24px]'
+          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
         }>
         {/* 图片封面 */}
         {showPageCover && (
@@ -48,7 +47,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
                 alt={post?.title}
-                className='h-full w-full object-cover transition-all duration-500 ease-in-out' // 移除 group-hover:scale-105 和 group-hover:brightness-75
+                className='h-full w-full object-cover transition-all duration-500 ease-in-out'
               />
             </div>
           </Link>
@@ -58,7 +57,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         <div
           className={
             (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
-            ' flex p-6  flex-col justify-between h-48 md:h-full w-full md:w-7/12'
+            ' flex p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
           }>
           <header>
             {/* 分类 */}
@@ -79,28 +78,27 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
               href={post?.href}
               passHref
               className={
-                ' group-hover:text-emerald-400 dark:hover:text-emerald-400 dark:group-hover:text-emerald-400 text-black dark:text-gray-100  line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
+                'group-hover:text-emerald-400 dark:hover:text-emerald-400 dark:group-hover:text-emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
               }>
               {siteConfig('POST_TITLE_ICON') && (
                 <NotionIcon
-                icon={post.pageIcon}
-                className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]" // 专门为 Heo 主题的图标设置样式
-              />
+                  icon={post.pageIcon}
+                  className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]"
+                />
               )}
-              <span className='menu-link '>{post.title}</span>
+              <span className='menu-link'>{post.title}</span>
             </Link>
           </header>
 
           {/* 摘要 */}
           {(!showPreview || showSummary) && (
-            <main className='line-clamp-2 replace text-gray-700  dark:text-gray-300 text-sm font-light leading-tight'>
+            <main className='line-clamp-2 replace text-gray-700 dark:text-gray-300 text-sm font-light leading-tight'>
               {post.summary}
             </main>
           )}
 
           <div className='md:flex-nowrap flex-wrap md:justify-start inline-block'>
             <div>
-              {' '}
               {post.tagItems?.map(tag => (
                 <TagItemMini key={tag.name} tag={tag} />
               ))}

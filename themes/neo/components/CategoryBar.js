@@ -13,10 +13,8 @@ export default function CategoryBar(props) {
   const { categoryOptions, border = true } = props
   const { locale } = useGlobal()
   const [scrollRight, setScrollRight] = useState(false)
-  // 创建一个ref引用
   const categoryBarItemsRef = useRef(null)
 
-  // 点击#right时，滚动#category-bar-items到最右边
   const handleToggleScroll = () => {
     if (categoryBarItemsRef.current) {
       const { scrollWidth, clientWidth } = categoryBarItemsRef.current
@@ -32,8 +30,8 @@ export default function CategoryBar(props) {
   return (
     <div
       id='category-bar'
-      className={`wow fadeInUp flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full lg:bg-white dark:lg:bg-[#1e1e1e]  
-            ${border ? 'lg:border lg:hover:border dark:lg:border-gray-800 hover:border-emerald-400 dark:hover:border-emerald-400 ' : ''}  py-2 lg:px-2 rounded-[24px] transition-colors duration-200`}>
+      className={`wow fadeInUp flex flex-nowrap justify-between items-center h-12 mb-4 space-x-2 w-full bg-white dark:bg-[#1e1e1e]  
+            ${border ? 'border border-gray-200 dark:border-gray-700' : ''} py-2 px-2 rounded-[24px] shadow-md hover:shadow-lg transition-shadow duration-300`}>
       <div
         id='category-bar-items'
         ref={categoryBarItemsRef}
@@ -44,7 +42,7 @@ export default function CategoryBar(props) {
         ))}
       </div>
 
-      <div id='category-bar-next' className='flex items-center justify-center pr-2'> {/* 添加了pr-2 */}
+      <div id='category-bar-next' className='flex items-center justify-center pr-2'>
         <div
           id='right'
           className='cursor-pointer mx-2 dark:text-gray-300 dark:hover:text-emerald-400 hover:text-emerald-400'
@@ -65,11 +63,6 @@ export default function CategoryBar(props) {
   )
 }
 
-/**
- * 按钮
- * @param {*} param0
- * @returns
- */
 const MenuItem = ({ href, name }) => {
   const router = useRouter()
   const { category } = router.query
