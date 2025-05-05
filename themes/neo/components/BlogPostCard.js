@@ -38,27 +38,19 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         {/* 图片封面 */}
         {showPageCover && (
           <Link href={post?.href} passHref legacyBehavior>
-            <div
-              className={
-                (POST_TWO_COLS ? '2xl:w-full' : '') +
-                ' w-full md:w-5/12 overflow-hidden cursor-pointer select-none'
-              }>
+            <div className='w-full md:w-5/12 overflow-hidden cursor-pointer select-none'>
               <LazyImage
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
                 alt={post?.title}
-                className='h-48 w-full object-cover md:h-full transition-all duration-500 ease-in-out'
+                className='h-full w-full object-cover transition-all duration-500 ease-in-out'
               />
             </div>
           </Link>
         )}
 
-        {/* 文字区块 */}
-        <div
-          className={
-            (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
-            ' flex p-4 md:p-6 flex-col justify-between w-full md:w-7/12'
-          }>
+        {/* 文字区块 - 修改了移动端宽度类名 */}
+        <div className='flex p-6 flex-col justify-between w-full md:w-7/12'>
           <header>
             {/* 分类 */}
             {post?.category && (
