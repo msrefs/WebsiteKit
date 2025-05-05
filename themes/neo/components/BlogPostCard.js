@@ -47,7 +47,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
                 alt={post?.title}
-                className='h-full w-full object-cover transition-all duration-500 ease-in-out'
+                className='h-48 w-full object-cover md:h-full transition-all duration-500 ease-in-out'
               />
             </div>
           </Link>
@@ -57,7 +57,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         <div
           className={
             (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
-            ' flex p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
+            ' flex p-4 md:p-6 flex-col justify-between w-full md:w-7/12'
           }>
           <header>
             {/* 分类 */}
