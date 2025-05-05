@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
  */
 export default function WavesArea() {
   const { isDarkMode } = useGlobal()
-  const color = isDarkMode ? '#808080' : '#f7f9fe' // 灰色背景
+  const color = '#18171D' // 直接设置为黑色，忽略isDarkMode
   const [showWave, setShowWave] = useState(true)
 
   useEffect(() => {
