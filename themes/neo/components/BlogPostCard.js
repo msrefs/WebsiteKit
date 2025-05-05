@@ -6,7 +6,26 @@ import CONFIG from '../config'
 import TagItemMini from './TagItemMini'
 
 const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
-  // ...（保持原有逻辑不变）
+  const showPreview =
+    siteConfig('HEO_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
+  if (
+    post &&
+    !post.pageCoverThumbnail &&
+    siteConfig('HEO_POST_LIST_COVER_DEFAULT', null, CONFIG)
+  ) {
+    post.pageCoverThumbnail = siteInfo?.pageCover
+  }
+  const showPageCover =
+    siteConfig('HEO_POST_LIST_COVER', null, CONFIG) &&
+    post?.pageCoverThumbnail &&
+    !showPreview
+
+  const POST_TWO_COLS = siteConfig('HEO_HOME_POST_TWO_COLS', true, CONFIG)
+  const COVER_HOVER_ENLARGE = siteConfig(
+    'HEO_POST_LIST_COVER_HOVER_ENLARGE',
+    true,
+    CONFIG
+  )
 
   return (
     <article>
@@ -14,13 +33,16 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         data-wow-delay='.2s'
         className={
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
-          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto px-4 md:px-5 hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
+          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
         }>
-        
-        {/* 图片封面 - 完全保持不变 */}
+        {/* 图片封面 */}
         {showPageCover && (
           <Link href={post?.href} passHref legacyBehavior>
-            <div className='w-full md:w-5/12 overflow-hidden cursor-pointer select-none'>
+            <div
+              className={
+                (POST_TWO_COLS ? '2xl:w-full' : '') +
+                ' w-full md:w-5/12 overflow-hidden cursor-pointer select-none'
+              }>
               <LazyImage
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
@@ -31,29 +53,44 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
           </Link>
         )}
 
-        {/* 文字区块 - 关键修改处 */}
+        {/* 文字区块 */}
         <div
           className={
             (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
-            ' flex p-4 md:p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12 -mx-4 md:mx-0'
+            ' flex p-4 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
           }>
-          {/* 内容部分完全保持不变 */}
           <header>
+            {/* 分类 */}
             {post?.category && (
-              <div className={`flex mb-1 items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-300 text-gray-600 hover:text-emerald-400 dark:hover:text-emerald-400`}>
-                <Link passHref href={`/category/${post.category}`} className='cursor-pointer text-xs font-normal menu-link'>
+              <div
+                className={`flex mb-1 items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-300 text-gray-600 hover:text-emerald-400 dark:hover:text-emerald-400`}>
+                <Link
+                  passHref
+                  href={`/category/${post.category}`}
+                  className='cursor-pointer text-xs font-normal menu-link '>
                   {post.category}
                 </Link>
               </div>
             )}
-            <Link href={post?.href} passHref className='group-hover:text-emerald-400 dark:hover:text-emerald-400 dark:group-hover:text-emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'>
+
+            {/* 标题和图标 */}
+            <Link
+              href={post?.href}
+              passHref
+              className={
+                'group-hover:text-emerald-400 dark:hover:text-emerald-400 dark:group-hover:text-emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'
+              }>
               {siteConfig('POST_TITLE_ICON') && (
-                <NotionIcon icon={post.pageIcon} className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]" />
+                <NotionIcon
+                  icon={post.pageIcon}
+                  className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]"
+                />
               )}
               <span className='menu-link'>{post.title}</span>
             </Link>
           </header>
 
+          {/* 摘要 */}
           {(!showPreview || showSummary) && (
             <main className='line-clamp-2 replace text-gray-700 dark:text-gray-300 text-sm font-light leading-tight'>
               {post.summary}
