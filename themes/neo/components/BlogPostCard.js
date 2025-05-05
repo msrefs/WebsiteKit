@@ -35,10 +35,14 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
           ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto px-4 md:px-5 hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
         }>
-        {/* 图片封面 */}
+        {/* 图片封面 - 保持不变 */}
         {showPageCover && (
           <Link href={post?.href} passHref legacyBehavior>
-            <div className='w-full md:w-5/12 overflow-hidden cursor-pointer select-none'>
+            <div
+              className={
+                (POST_TWO_COLS ? '2xl:w-full' : '') +
+                ' w-full md:w-5/12 overflow-hidden cursor-pointer select-none'
+              }>
               <LazyImage
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
@@ -49,8 +53,12 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
           </Link>
         )}
 
-        {/* 文字区块 - 修改了移动端宽度类名 */}
-        <div className='flex p-6 flex-col justify-between w-full md:w-7/12'>
+        {/* 文字区块 - 仅调整移动端宽度 */}
+        <div
+          className={
+            (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
+            ' flex p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
+          }>
           <header>
             {/* 分类 */}
             {post?.category && (
