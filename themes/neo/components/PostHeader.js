@@ -31,12 +31,12 @@ export default function PostHeader({ post, siteInfo, isDarkMode }) {
           height: 100%;
           top: 0;
           left: 0;
-          box-shadow: 110px -130px 500px 100px #0060e0 inset;
+          box-shadow: 110px -130px 500px 100px rgba(0, 0, 0, 0.8) inset;
         }
       `}</style>
 
       <div
-        className={`bg-[#0060e0] absolute top-0 w-full h-full py-10 flex justify-center items-center`}>
+        className={`bg-black absolute top-0 w-full h-full py-10 flex justify-center items-center`}>
         {/* 文章背景图 */}
         <div
           id='post-cover-wrapper'
@@ -64,7 +64,7 @@ export default function PostHeader({ post, siteInfo, isDarkMode }) {
                   className='mr-4'
                   passHref
                   legacyBehavior>
-                  <div className='cursor-pointer font-sm font-bold px-3 py-1 rounded-full  hover:bg-white text-white bg-blue-500 hover:text-blue-500 duration-200 '>
+                  <div className='cursor-pointer font-sm font-bold px-3 py-1 rounded-full  hover:bg-white text-white bg-gray-600 hover:text-gray-600 duration-200 '>
                     {post.category}
                   </div>
                 </Link>
@@ -79,10 +79,10 @@ export default function PostHeader({ post, siteInfo, isDarkMode }) {
                     href={`/tag/${encodeURIComponent(tag.name)}`}
                     passHref
                     className={
-                      'cursor-pointer inline-block text-gray-50 hover:text-white duration-200 py-0.5 px-1 whitespace-nowrap '
+                      'cursor-pointer inline-block text-gray-300 hover:text-white duration-200 py-0.5 px-1 whitespace-nowrap '
                     }>
                     <div className='font-light flex items-center'>
-                      <HashTag className='text-gray-200 stroke-2 mr-0.5 w-3 h-3' />{' '}
+                      <HashTag className='text-gray-300 stroke-2 mr-0.5 w-3 h-3' />{' '}
                       {tag.name + (tag.count ? `(${tag.count})` : '')}{' '}
                     </div>
                   </Link>
