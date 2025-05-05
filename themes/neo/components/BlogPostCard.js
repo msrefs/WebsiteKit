@@ -33,7 +33,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         data-wow-delay='.2s'
         className={
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
-          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
+          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto px-4 md:px-5 hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
         }>
         {/* 图片封面 */}
         {showPageCover && (
@@ -57,7 +57,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
         <div
           className={
             (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
-            ' flex p-4 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
+            ' flex p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
           }>
           <header>
             {/* 分类 */}
