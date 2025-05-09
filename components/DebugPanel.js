@@ -97,7 +97,7 @@ const DebugPanel = () => {
                 <div className="text-xs">
                     {Object.keys(themeConfig).map(k => (
                         <div key={k} className="justify-between flex py-1">
-                            <span className="bg-indigo-500 p-0.5 rounded text-white mr-2">
+                            <span className="bg-emerald-400 p-0.5 rounded text-white mr-2">
                                 {k}
                             </span>
                             <span className="whitespace-nowrap">

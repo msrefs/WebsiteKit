@@ -8,6 +8,7 @@ import TagItemMini from './TagItemMini'
 const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
   const showPreview =
     siteConfig('HEO_POST_LIST_PREVIEW', null, CONFIG) && post.blockMap
+  
   if (
     post &&
     !post.pageCoverThumbnail &&
@@ -15,6 +16,7 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
   ) {
     post.pageCoverThumbnail = siteInfo?.pageCover
   }
+
   const showPageCover =
     siteConfig('HEO_POST_LIST_COVER', null, CONFIG) &&
     post?.pageCoverThumbnail &&
@@ -28,77 +30,81 @@ const BlogPostCard = ({ index, post, showSummary, siteInfo }) => {
   )
 
   return (
-    <article>
+    <article className={`${COVER_HOVER_ENLARGE ? 'hover:transition-all duration-150' : ''}`}>
       <div
-        data-wow-delay='.2s'
+        data-wow-delay=".2s"
         className={
           (POST_TWO_COLS ? '2xl:h-96 2xl:flex-col' : '') +
-          ' wow fadeInUp border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full md:max-w-none max-w-[86rem] mx-auto hover:shadow-lg transition-shadow duration-300 justify-between overflow-hidden rounded-[24px] shadow-md'
-        }>
-        {/* 图片封面 - 完全宽度 */}
+          ' wow fadeInUp border bg-white dark:bg-[#1e1e1e] flex mb-4 flex-col h-[23rem] md:h-52 md:flex-row group w-full dark:border-gray-600 justify-between overflow-hidden rounded-xl shadow-md hover:shadow-lg dark:shadow-neutral-800/70 transition-all duration-300'
+        }
+      >
         {showPageCover && (
           <Link href={post?.href} passHref legacyBehavior>
-            <div className={
-              (POST_TWO_COLS ? '2xl:w-full' : '') +
-              ' w-full md:w-5/12 overflow-hidden cursor-pointer select-none'
-            }>
+            <div
+              className={
+                (POST_TWO_COLS ? '2xl:w-full' : '') +
+                ' w-full md:w-5/12 overflow-hidden cursor-pointer select-none'
+              }
+            >
               <LazyImage
                 priority={index === 0}
                 src={post?.pageCoverThumbnail}
                 alt={post?.title}
-                className='h-full w-full object-cover transition-all duration-500 ease-in-out'
+                className="h-full w-full object-cover group-hover:scale-105 transition-all duration-500 ease-in-out"
               />
             </div>
           </Link>
         )}
 
-        {/* 文字区块 - 移除内边距 */}
         <div
           className={
-            (POST_TWO_COLS ? '2xl:w-full' : '') +
-            ' flex flex-col justify-between h-48 md:h-full w-full md:w-7/12'
-          }>
-          <div className='p-4'> {/* 只在内容容器内部添加必要间距 */}
-            <header>
-              {/* 分类 */}
-              {post?.category && (
-                <div className={`flex mb-1 items-center ${showPreview ? 'justify-center' : 'justify-start'} hidden md:block flex-wrap dark:text-gray-300 text-gray-600 hover:text-emerald-400 dark:hover:text-emerald-400`}>
-                  <Link
-                    passHref
-                    href={`/category/${post.category}`}
-                    className='cursor-pointer text-xs font-normal menu-link'>
-                    {post.category}
-                  </Link>
-                </div>
-              )}
-
-              {/* 标题和图标 */}
-              <Link
-                href={post?.href}
-                passHref
-                className='group-hover:text-emerald-400 dark:hover:text-emerald-400 dark:group-hover:text-emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight'>
-                {siteConfig('POST_TITLE_ICON') && (
-                  <NotionIcon
-                    icon={post.pageIcon}
-                    className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]"
-                  />
-                )}
-                <span className='menu-link'>{post.title}</span>
-              </Link>
-            </header>
-
-            {/* 摘要 */}
-            {(!showPreview || showSummary) && (
-              <main className='line-clamp-2 replace text-gray-700 dark:text-gray-300 text-sm font-light leading-tight mt-2'>
-                {post.summary}
-              </main>
+            (POST_TWO_COLS ? '2xl:p-4 2xl:h-48 2xl:w-full' : '') +
+            ' flex p-6 flex-col justify-between h-48 md:h-full w-full md:w-7/12'
+          }
+        >
+          <header>
+            {post?.category && (
+              <div
+                className={`flex mb-1 items-center ${
+                  showPreview ? 'justify-center' : 'justify-start'
+                } hidden md:block flex-wrap dark:text-gray-300 text-gray-600 dark:hover:text-emerald-400`}
+              >
+                <Link
+                  passHref
+                  href={`/category/${post.category}`}
+                  className="cursor-pointer text-xs font-normal menu-link hover:text-gray-800 dark:hover:text-emerald-400"
+                >
+                  {post.category}
+                </Link>
+              </div>
             )}
-          </div>
 
-          {/* 标签 - 保持原有样式 */}
-          <div className='px-4 pb-4'> {/* 只在内容容器内部添加必要间距 */}
-            <div className='md:flex-nowrap flex-wrap md:justify-start inline-block'>
-              {post.tagItems?.map(tag => (
+            <Link
+              href={post?.href}
+              passHref
+              className="dark:hover:text-emerald-400 text-black dark:text-gray-100 line-clamp-2 replace cursor-pointer text-xl font-extrabold leading-tight"
+            >
+              {siteConfig('POST_TITLE_ICON') && (
+                <NotionIcon
+                  icon={post.pageIcon}
+                  className="heo-icon w-6 h-6 mr-1 align-middle transform translate-y-[-8%]"
+                />
+              )}
+              <span className="menu-link hover:text-gray-800 dark:hover:text-emerald-400">
+                {post.title}
+              </span>
+            </Link>
+          </header>
+
+          {(!showPreview || showSummary) && (
+            <main className="line-clamp-2 replace text-gray-700 dark:text-gray-300 text-sm font-light leading-tight">
+              {post.summary}
+            </main>
+          )}
+
+          <div className="md:flex-nowrap flex-wrap md:justify-start inline-block">
+            <div>
+              {post.tagItems?.map((tag) => (
                 <TagItemMini key={tag.name} tag={tag} />
               ))}
             </div>
