@@ -1,5 +1,6 @@
 import { siteConfig } from '@/lib/config'
 import CONFIG from '../config'
+import Link from 'next/link'
 
 const Hero = () => {
   return (
@@ -48,48 +49,59 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* 移动端版本 - 全新设计 */}
-      <div className='md:hidden w-full px-4'>
+      {/* 移动端版本 - 更新版 */}
+      <div className='md:hidden w-full px-5'>
         <div className={`
-          w-full min-h-[200px] overflow-hidden
-          bg-white dark:bg-[#1a1a1a]
-          border border-gray-100 dark:border-gray-800
-          rounded-2xl
+          w-full h-56 overflow-hidden
+          bg-[#FFFFFF] dark:bg-[#1e1e1e]
+          border border-gray-200 dark:border-gray-700
+          rounded-3xl
           relative
-          p-6
-          flex flex-col justify-center
-          shadow-sm hover:shadow-md transition-shadow duration-300
+          shadow-md hover:shadow-lg transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          {/* 简约背景元素 */}
-          <div className="absolute right-0 top-0 w-32 h-32 opacity-10 dark:opacity-5">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00e599] to-[#007a6e] rounded-full blur-[60px]"></div>
+          {/* 背景渐变元素 */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="
+              absolute -left-1/4 -top-1/4 w-[150%] h-[150%] 
+              bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
+              from-transparent via-[#00e599]/10 to-[#00e599]/20 
+              blur-[80px]
+              transform-gpu
+              will-change-transform
+            "></div>
           </div>
           
-          {/* 内容区域 */}
-          <div className='relative z-10'>
-            <h1 className='text-3xl font-bold mb-3 text-gray-800 dark:text-gray-100'>
+          <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
+
+          <div className='z-20 flex flex-col absolute top-6 left-6 right-6'>
+            <h1 className='text-2xl font-extrabold mb-2 text-gray-800 dark:text-gray-100'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
             </h1>
-            
-            {/* 简约装饰线 */}
-            <div className="w-12 h-1 bg-gradient-to-r from-[#00e599] to-[#00af92] mb-4 rounded-full"></div>
-            
-            <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4'>
+            <p className='text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-3'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </p>
             
-            {/* 简约按钮 (可选) */}
-            <button className="
-              mt-2 px-4 py-2 text-sm font-medium rounded-lg
-              bg-gradient-to-r from-[#00e599] to-[#00af92]
-              text-white
-              shadow-sm hover:shadow-md transition-all
-              focus:outline-none focus:ring-2 focus:ring-[#00e599]/50
-            ">
-              了解更多
-            </button>
+            {/* 加入服务器按钮 */}
+            <Link 
+              href="https://mcs.neotec.uk" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="
+                mt-1 w-fit px-4 py-2 text-xs font-medium
+                bg-gradient-to-r from-[#00e599] to-[#00af92]
+                text-white
+                rounded-full
+                shadow-sm hover:shadow-md transition-all
+                focus:outline-none focus:ring-2 focus:ring-[#00e599]/50
+              "
+            >
+              加入Minecraft服务器
+            </Link>
           </div>
+          
+          {/* 底部装饰元素 */}
+          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00e599] via-[#00af92] to-[#007a6e]"></div>
         </div>
       </div>
     </div>
