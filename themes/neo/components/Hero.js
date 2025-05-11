@@ -15,24 +15,13 @@ const Hero = () => {
           shadow-lg hover:shadow-xl transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="
-              absolute -right-1/4 -top-1/4 w-[150%] h-[150%] 
-              bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-              from-transparent via-[#00e599]/10 to-[#00e599]/20 
-              blur-[120px]
-              transform-gpu
-              will-change-transform
-            "></div>
-          </div>
-
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
 
           <div className='z-20 flex flex-col absolute top-12 left-12 max-w-lg'>
             <h1 className='text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
               <br />
-              <span className='text-4xl'>{siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}</span>
+              <span className='text-3xl'>{siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}</span>
             </h1>
             <p className='text-sm text-gray-500 dark:text-gray-400 leading-relaxed'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
@@ -60,22 +49,10 @@ const Hero = () => {
           shadow-md hover:shadow-lg transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          {/* 背景渐变元素 - 放大 */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="
-              absolute -left-1/4 -top-1/4 w-[150%] h-[150%] 
-              bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-              from-transparent via-[#00e599]/15 to-[#00e599]/25 
-              blur-[100px]
-              transform-gpu
-              will-change-transform
-            "></div>
-          </div>
-          
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
 
           <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
-            <h1 className='text-6xl font-extrabold mb-3 text-gray-800 dark:text-gray-100'>
+            <h1 className='text-4xl font-extrabold mb-3 text-gray-800 dark:text-gray-100'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
             </h1>
 
