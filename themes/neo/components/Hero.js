@@ -75,9 +75,13 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
 
           <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
-            <h1 className='text-3xl font-extrabold mb-3 text-gray-800 dark:text-gray-100'>
+            <h1 className='text-6xl font-extrabold mb-3 text-gray-800 dark:text-gray-100'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
             </h1>
+
+            {/* 简约装饰线 */}
+            <div className="w-12 h-1 bg-gradient-to-r from-[#00e599] to-[#00af92] mb-4 rounded-full"></div>
+
             <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </p>

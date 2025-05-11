@@ -18,9 +18,9 @@ const CONFIG = {
   HEO_HERO_BODY_REVERSE: false,
 
   // 英雄区(首页顶部大卡)
-  HEO_HERO_TITLE_1: '你好！',
-  HEO_HERO_TITLE_2: '欢迎访问Neotec.',
-  HEO_HERO_TITLE_3: 'WWW.NEOTEC.UK',
+  HEO_HERO_TITLE_1: 'Build your next idea even faster.',
+  HEO_HERO_TITLE_2: 'By the makers of Tailwind CSS.',
+  HEO_HERO_TITLE_3: 'Beautifully designed, expertly crafted components and templates, built by the makers of Tailwind CSS. The perfect starting point for your next project.',
 
   // 个人资料底部按钮
   HEO_INFO_CARD_URL1: '/about',
