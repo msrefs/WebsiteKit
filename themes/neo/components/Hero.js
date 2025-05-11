@@ -52,7 +52,7 @@ const Hero = () => {
       {/* 移动端版本 - 更新版 */}
       <div className='md:hidden w-full px-5'>
         <div className={`
-          w-full h-56 overflow-hidden
+          w-full h-64 overflow-hidden
           bg-[#FFFFFF] dark:bg-[#1e1e1e]
           border border-gray-200 dark:border-gray-700
           rounded-3xl
@@ -60,13 +60,13 @@ const Hero = () => {
           shadow-md hover:shadow-lg transition-shadow duration-300
           wow fadeInUp
         `} data-wow-delay="0.1s">
-          {/* 背景渐变元素 */}
+          {/* 背景渐变元素 - 放大 */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="
               absolute -left-1/4 -top-1/4 w-[150%] h-[150%] 
               bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] 
-              from-transparent via-[#00e599]/10 to-[#00e599]/20 
-              blur-[80px]
+              from-transparent via-[#00e599]/15 to-[#00e599]/25 
+              blur-[100px]
               transform-gpu
               will-change-transform
             "></div>
@@ -74,21 +74,21 @@ const Hero = () => {
           
           <div className="absolute inset-0 bg-gradient-to-r from-white/80 via-white/20 to-transparent dark:from-[#1a1a1a]/80 dark:via-[#1a1a1a]/20 pointer-events-none"></div>
 
-          <div className='z-20 flex flex-col absolute top-6 left-6 right-6'>
-            <h1 className='text-2xl font-extrabold mb-2 text-gray-800 dark:text-gray-100'>
+          <div className='z-20 flex flex-col absolute top-8 left-6 right-6'>
+            <h1 className='text-3xl font-extrabold mb-3 text-gray-800 dark:text-gray-100'>
               {siteConfig('HEO_HERO_TITLE_1', null, CONFIG)}
             </h1>
-            <p className='text-xs text-gray-500 dark:text-gray-400 leading-relaxed mb-3'>
+            <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </p>
             
-            {/* 加入服务器按钮 */}
+            {/* 放大的加入服务器按钮 */}
             <Link 
               href="https://mcs.neotec.uk" 
               target="_blank"
               rel="noopener noreferrer"
               className="
-                mt-1 w-fit px-4 py-2 text-xs font-medium
+                mt-2 w-fit px-5 py-3 text-sm font-medium
                 bg-gradient-to-r from-[#00e599] to-[#00af92]
                 text-white
                 rounded-full
@@ -99,9 +99,6 @@ const Hero = () => {
               加入Minecraft服务器
             </Link>
           </div>
-          
-          {/* 底部装饰元素 */}
-          <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00e599] via-[#00af92] to-[#007a6e]"></div>
         </div>
       </div>
     </div>
