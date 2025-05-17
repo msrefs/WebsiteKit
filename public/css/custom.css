@@ -7,156 +7,97 @@
     content: "\f05a";
 }
 
-/* Twikoo 圆润简洁主题 - Emerald-400 风格 */
-/* 主色调: emerald-400 (#34D399) */
-/* 完美支持暗色模式 */
+/* ===== Twikoo 评论主题 - 适配 NotionNext ===== */
+/* 主色调：蓝色 (#3b82f6) */
+/* 自动适配深色/浅色模式 */
 
 :root {
-  --twikoo-primary: #34D399;
-  --twikoo-primary-hover: #10B981;
-  --twikoo-text: #374151;
-  --twikoo-text-secondary: #6B7280;
-  --twikoo-border: #E5E7EB;
-  --twikoo-bg: #FFFFFF;
-  --twikoo-bg-secondary: #F9FAFB;
-  --twikoo-bg-tertiary: #F3F4F6;
-  --twikoo-error: #EF4444;
-  --twikoo-success: #10B981;
-  --twikoo-link: #3B82F6;
-  --twikoo-radius: 12px;
-  --twikoo-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --twikoo-primary: #3b82f6;
+  --twikoo-primary-hover: #2563eb;
+  --twikoo-text: #1f2937;
+  --twikoo-text-secondary: #6b7280;
+  --twikoo-border: #e5e7eb;
+  --twikoo-bg: #ffffff;
+  --twikoo-card-bg: #ffffff;
+  --twikoo-input-bg: #f9fafb;
+  --twikoo-error: #ef4444;
+  --twikoo-success: #10b981;
+  --twikoo-radius: 8px;
+  --twikoo-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --twikoo-primary: #34D399;
-    --twikoo-primary-hover: #10B981;
-    --twikoo-text: #E5E7EB;
-    --twikoo-text-secondary: #9CA3AF;
-    --twikoo-border: #4B5563;
-    --twikoo-bg: #1F2937;
-    --twikoo-bg-secondary: #111827;
-    --twikoo-bg-tertiary: #374151;
-    --twikoo-error: #F87171;
-    --twikoo-success: #34D399;
-    --twikoo-link: #60A5FA;
-    --twikoo-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-  }
+.notion-dark {
+  --twikoo-primary: #60a5fa;
+  --twikoo-primary-hover: #3b82f6;
+  --twikoo-text: #e5e7eb;
+  --twikoo-text-secondary: #9ca3af;
+  --twikoo-border: #374151;
+  --twikoo-bg: #1f2937;
+  --twikoo-card-bg: #111827;
+  --twikoo-input-bg: #1f2937;
+  --twikoo-error: #f87171;
+  --twikoo-success: #34d399;
+  --twikoo-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-/* 基础样式重置 */
+/* ===== 基础样式 ===== */
 .tk-comments-container {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   color: var(--twikoo-text);
-}
-
-/* 评论区容器 */
-.tk-comments-container {
+  line-height: 1.6;
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
 }
 
-/* 评论计数 */
+/* ===== 评论计数 ===== */
 .tk-comments-count {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--twikoo-text);
   margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--twikoo-border);
 }
 
-.tk-comments-count span {
-  color: var(--twikoo-primary);
-}
-
-/* 评论输入框 */
+/* ===== 评论输入框 ===== */
 .tk-input {
-  border-radius: var(--twikoo-radius);
+  background: var(--twikoo-input-bg);
   border: 1px solid var(--twikoo-border);
-  background-color: var(--twikoo-bg);
-  padding: 1rem;
-  transition: all 0.2s ease;
+  border-radius: var(--twikoo-radius);
+  padding: 12px 16px;
+  width: 100%;
+  transition: all 0.2s;
   box-shadow: var(--twikoo-shadow);
 }
 
 .tk-input:focus {
-  outline: none;
   border-color: var(--twikoo-primary);
-  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
 }
 
-.tk-preview-container {
-  border-radius: var(--twikoo-radius);
-  background-color: var(--twikoo-bg-secondary);
-  padding: 1rem;
-  margin-top: 1rem;
-  border: 1px solid var(--twikoo-border);
-}
-
-/* 按钮样式 */
-.tk-submit, .tk-edit, .tk-cancel, .tk-preview, .tk-owo {
-  border-radius: 9999px;
-  padding: 0.5rem 1.25rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.tk-submit {
-  background-color: var(--twikoo-primary);
-  color: white;
-}
-
-.tk-submit:hover {
-  background-color: var(--twikoo-primary-hover);
-  transform: translateY(-1px);
-}
-
-.tk-edit, .tk-preview, .tk-owo {
-  background-color: var(--twikoo-bg-tertiary);
-  color: var(--twikoo-text);
-}
-
-.tk-edit:hover, .tk-preview:hover, .tk-owo:hover {
-  background-color: var(--twikoo-border);
-}
-
-.tk-cancel {
-  background-color: transparent;
-  color: var(--twikoo-text-secondary);
-}
-
-.tk-cancel:hover {
-  color: var(--twikoo-text);
-}
-
-/* 评论列表 */
-.tk-comments {
-  margin-top: 2rem;
-}
-
-/* 单个评论 */
+/* ===== 评论卡片 ===== */
 .tk-comment {
-  padding: 1.5rem;
+  background: var(--twikoo-card-bg);
   border-radius: var(--twikoo-radius);
-  background-color: var(--twikoo-bg);
-  margin-bottom: 1.5rem;
-  box-shadow: var(--twikoo-shadow);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
   border: 1px solid var(--twikoo-border);
-  transition: transform 0.2s ease;
+  box-shadow: var(--twikoo-shadow);
+  transition: transform 0.2s;
 }
 
 .tk-comment:hover {
   transform: translateY(-2px);
 }
 
+/* ===== 用户头像 & 昵称 ===== */
 .tk-avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  object-fit: cover;
-  margin-right: 1rem;
+  margin-right: 12px;
   border: 2px solid var(--twikoo-primary);
 }
 
@@ -170,164 +111,69 @@
   color: var(--twikoo-primary);
 }
 
-.tk-tag {
-  background-color: var(--twikoo-primary);
-  color: white;
-  border-radius: 4px;
-  padding: 0.15rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin-left: 0.5rem;
-}
-
-.tk-time {
-  color: var(--twikoo-text-secondary);
-  font-size: 0.875rem;
-}
-
-.tk-expand {
-  color: var(--twikoo-primary);
-  cursor: pointer;
-  font-weight: 500;
-}
-
+/* ===== 评论内容 ===== */
 .tk-content {
-  margin-top: 1rem;
-  line-height: 1.6;
+  margin-top: 0.75rem;
+  color: var(--twikoo-text);
 }
 
 .tk-content p {
-  margin-bottom: 0.75rem;
+  margin: 0.5rem 0;
 }
 
 .tk-content a {
-  color: var(--twikoo-link);
-  text-decoration: none;
-  border-bottom: 1px dashed var(--twikoo-link);
-}
-
-.tk-content a:hover {
   color: var(--twikoo-primary);
-  border-bottom: 1px solid var(--twikoo-primary);
+  text-decoration: none;
+  border-bottom: 1px dashed var(--twikoo-primary);
 }
 
+/* ===== 操作按钮（回复、点赞） ===== */
 .tk-actions {
   margin-top: 1rem;
   display: flex;
-  gap: 0.75rem;
+  gap: 12px;
 }
 
 .tk-action-icon {
   color: var(--twikoo-text-secondary);
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
+  transition: color 0.2s;
 }
 
 .tk-action-icon:hover {
   color: var(--twikoo-primary);
 }
 
-.tk-action-icon svg {
-  width: 1.1rem;
-  height: 1.1rem;
-}
-
-/* 回复框 */
-.tk-reply {
-  margin-top: 1rem;
-  padding-left: 2rem;
-  border-left: 2px solid var(--twikoo-border);
-}
-
-/* 分页 */
+/* ===== 分页 ===== */
 .tk-pagination {
   display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 2rem;
+  gap: 8px;
+  margin-top: 1.5rem;
 }
 
 .tk-pagination-item {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: var(--twikoo-bg-secondary);
+  padding: 6px 12px;
+  border-radius: var(--twikoo-radius);
+  background: var(--twikoo-input-bg);
   color: var(--twikoo-text);
-  font-weight: 500;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.2s;
 }
 
 .tk-pagination-item:hover {
-  background-color: var(--twikoo-primary);
+  background: var(--twikoo-primary);
   color: white;
 }
 
 .tk-pagination-item.active {
-  background-color: var(--twikoo-primary);
+  background: var(--twikoo-primary);
   color: white;
 }
 
-/* 通知消息 */
-.tk-notify {
-  border-radius: var(--twikoo-radius);
-  padding: 1rem;
-  margin-bottom: 1rem;
-  background-color: var(--twikoo-bg-secondary);
-  border: 1px solid var(--twikoo-border);
-}
-
-.tk-notify-success {
-  background-color: rgba(16, 185, 129, 0.1);
-  border-color: rgba(16, 185, 129, 0.2);
-  color: var(--twikoo-success);
-}
-
-.tk-notify-error {
-  background-color: rgba(239, 68, 68, 0.1);
-  border-color: rgba(239, 68, 68, 0.2);
-  color: var(--twikoo-error);
-}
-
-/* 响应式调整 */
-@media (max-width: 640px) {
-  .tk-comment {
-    padding: 1rem;
-  }
-  
-  .tk-reply {
-    padding-left: 1rem;
-  }
-  
-  .tk-avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  
-  .tk-actions {
-    flex-wrap: wrap;
-  }
-}
-
-/* 加载动画 */
-.tk-loading {
-  display: inline-block;
-  width: 1.5rem;
-  height: 1.5rem;
-  border: 3px solid rgba(52, 211, 153, 0.3);
-  border-radius: 50%;
-  border-top-color: var(--twikoo-primary);
-  animation: tk-spin 1s ease-in-out infinite;
-}
-
-@keyframes tk-spin {
-  to {
-    transform: rotate(360deg);
+/* ===== 暗色模式适配 ===== */
+@media (prefers-color-scheme: dark) {
+  .notion-dark .tk-comments-container {
+    background: transparent;
   }
 }
