@@ -65,7 +65,7 @@ const Hero = () => {
             
             {/* 放大的加入服务器按钮 */}
             <Link 
-              href="https://mcs.neotec.uk" 
+              href="https://www.neotec.uk" 
               target="_blank"
               rel="noopener noreferrer"
               className="
