@@ -6,3 +6,104 @@
 .fa-info:before {
     content: "\f05a";
 }
+
+/* ===== 基础容器 ===== */
+.tk-comments-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 0;
+  background: transparent;
+}
+
+/* ===== 评论卡片 ===== */
+.tk-comment {
+  background: #ffffff; /* 白色背景 */
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+.tk-comment:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== 夜间模式适配 ===== */
+[data-theme="dark"] .tk-comment {
+  background: #222222; /* 深灰背景 */
+  color: #e0e0e0;
+}
+
+/* ===== 头像 ===== */
+.tk-avatar {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+/* ===== 评论者信息 ===== */
+.tk-nick {
+  font-weight: bold;
+  color: #3b82f6; /* 蓝色昵称 */
+}
+.tk-time {
+  font-size: 0.85em;
+  color: #999999;
+}
+
+/* ===== 评论输入框 ===== */
+.tk-editor-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.el-textarea__inner {
+  min-height: 130px !important;
+  border-radius: 12px !important;
+  background: #f7f7f7 !important;
+  border: 1px solid #e0e0e0 !important;
+}
+
+/* ===== 按钮样式 ===== */
+.el-button--primary {
+  background: #3b82f6 !important; /* 蓝色按钮 */
+  border: none !important;
+  border-radius: 8px !important;
+}
+.el-button--default {
+  background: #f0f0f0 !important;
+  color: #333 !important;
+}
+
+/* ===== 表情包弹窗 ===== */
+#owo-big {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+[data-theme="dark"] #owo-big {
+  background: #4a4a4a;
+  border-color: #666;
+}
+
+/* ===== 移动端适配 ===== */
+@media (max-width: 768px) {
+  .tk-comment {
+    padding: 12px;
+  }
+  .el-textarea__inner {
+    min-height: 100px !important;
+  }
+}
+
+/* ===== 动画效果 ===== */
+@keyframes owoIn {
+  0% { transform: translate(0, -95%); opacity: 0; }
+  100% { transform: translate(0, -112%); opacity: 1; }
+}
+#owo-big {
+  animation: owoIn 0.3s cubic-bezier(0.42, 0, 0.3, 1.11);
+}
