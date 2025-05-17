@@ -62,23 +62,6 @@ const Hero = () => {
             <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4'>
               {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </p>
-            
-            {/* 放大的加入服务器按钮 */}
-            <Link 
-              href="https://www.neotec.uk" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="
-                mt-2 w-fit px-5 py-3 text-sm font-medium
-                bg-gradient-to-r from-[#00e599] to-[#00af92]
-                text-white
-                rounded-full
-                shadow-sm hover:shadow-md transition-all
-                focus:outline-none focus:ring-2 focus:ring-[#00e599]/50
-              "
-            >
-              加入Minecraft服务器
-            </Link>
           </div>
         </div>
       </div>
