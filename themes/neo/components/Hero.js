@@ -60,7 +60,7 @@ const Hero = () => {
             <div className="w-12 h-1 bg-gradient-to-r from-[#00e599] to-[#00af92] mb-4 rounded-full"></div>
 
             <p className='text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-4'>
-              {siteConfig('HEO_HERO_TITLE_2', null, CONFIG)}
+              {siteConfig('HEO_HERO_TITLE_3', null, CONFIG)}
             </p>
             
             {/* 放大的加入服务器按钮 */}
